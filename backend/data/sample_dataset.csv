@@ -1,0 +1,201 @@
+candidate_id,age,gender,education,years_experience,assessment_score,referral_source,role_applied,hired
+CAND-001,28,Female,Bachelor,4,82,Employee Referral,Software Engineer,1
+CAND-002,34,Male,Master,9,91,LinkedIn,Data Scientist,1
+CAND-003,26,Female,Bootcamp,2,68,Job Board,Frontend Developer,0
+CAND-004,31,Male,Bachelor,6,77,Direct Application,Product Manager,1
+CAND-005,29,NonBinary,PhD,5,88,University Career Fair,ML Engineer,1
+CAND-006,41,Male,Master,15,93,Employee Referral,Engineering Manager,1
+CAND-007,24,Female,Bachelor,1,61,Job Board,Junior Developer,0
+CAND-008,36,Male,Bachelor,10,79,LinkedIn,Senior Engineer,1
+CAND-009,27,Female,Master,3,85,University Career Fair,Data Analyst,1
+CAND-010,30,Male,Bootcamp,4,70,Direct Application,Backend Developer,0
+CAND-011,33,Female,PhD,7,90,Employee Referral,Research Scientist,1
+CAND-012,25,Male,Bachelor,2,64,Job Board,Junior Analyst,0
+CAND-013,38,Female,Master,12,87,LinkedIn,Product Lead,1
+CAND-014,29,NonBinary,Bachelor,4,75,Direct Application,UX Designer,1
+CAND-015,32,Male,Master,7,83,Employee Referral,Backend Engineer,1
+CAND-016,27,Female,Bootcamp,2,59,Job Board,QA Engineer,0
+CAND-017,35,Male,PhD,9,94,University Career Fair,AI Researcher,1
+CAND-018,28,Female,Bachelor,3,71,LinkedIn,Data Analyst,1
+CAND-019,31,Male,Master,6,80,Employee Referral,DevOps Engineer,1
+CAND-020,26,Female,Bachelor,2,63,Direct Application,Support Engineer,0
+CAND-021,43,Male,Master,18,96,Employee Referral,VP of Engineering,1
+CAND-022,30,Female,PhD,5,89,University Career Fair,NLP Engineer,1
+CAND-023,27,Male,Bootcamp,3,67,Job Board,Web Developer,0
+CAND-024,34,Female,Master,8,86,LinkedIn,Analytics Manager,1
+CAND-025,29,NonBinary,Bachelor,4,74,Direct Application,Product Designer,1
+CAND-026,32,Male,Bachelor,6,78,Employee Referral,Systems Analyst,1
+CAND-027,25,Female,Master,1,66,Job Board,Junior Data Scientist,0
+CAND-028,37,Male,PhD,11,92,University Career Fair,Principal Engineer,1
+CAND-029,28,Female,Bachelor,3,73,LinkedIn,Frontend Engineer,1
+CAND-030,33,Male,Master,7,84,Employee Referral,Cloud Architect,1
+CAND-031,26,Female,Bootcamp,2,57,Job Board,Content Writer,0
+CAND-032,30,Male,Bachelor,5,76,Direct Application,Software Engineer,1
+CAND-033,36,Female,Master,10,88,LinkedIn,Engineering Lead,1
+CAND-034,27,NonBinary,Bachelor,2,65,Job Board,Junior Engineer,0
+CAND-035,31,Male,PhD,6,91,Employee Referral,Research Engineer,1
+CAND-036,29,Female,Master,4,81,University Career Fair,Product Analyst,1
+CAND-037,35,Male,Bachelor,9,79,LinkedIn,Backend Developer,1
+CAND-038,28,Female,Bootcamp,3,62,Direct Application,QA Tester,0
+CAND-039,32,Male,Master,7,85,Employee Referral,Data Engineer,1
+CAND-040,26,Female,Bachelor,1,58,Job Board,Intern Developer,0
+CAND-041,34,Male,PhD,8,93,University Career Fair,Senior Researcher,1
+CAND-042,30,Female,Master,5,83,LinkedIn,Business Analyst,1
+CAND-043,27,Male,Bachelor,3,69,Job Board,Junior Analyst,0
+CAND-044,38,Female,Master,12,90,Employee Referral,Head of Data,1
+CAND-045,31,NonBinary,Bachelor,5,77,Direct Application,UX Researcher,1
+CAND-046,29,Male,Bootcamp,4,68,Job Board,Web Developer,0
+CAND-047,33,Female,PhD,7,92,University Career Fair,Applied Scientist,1
+CAND-048,28,Male,Master,4,80,LinkedIn,Solutions Architect,1
+CAND-049,35,Female,Bachelor,9,84,Employee Referral,Senior Engineer,1
+CAND-050,26,Male,Bootcamp,2,60,Job Board,Frontend Intern,0
+CAND-051,32,Female,Master,7,87,LinkedIn,Data Lead,1
+CAND-052,29,Male,Bachelor,4,72,Job Board,Software Tester,0
+CAND-053,27,Female,PhD,3,83,University Career Fair,ML Engineer,1
+CAND-054,33,Male,Master,8,89,Employee Referral,Platform Engineer,1
+CAND-055,25,Female,Bachelor,1,55,Job Board,Support Associate,0
+CAND-056,36,NonBinary,Master,10,91,LinkedIn,Senior Product Manager,1
+CAND-057,30,Male,Bachelor,5,74,Direct Application,DevOps Specialist,1
+CAND-058,28,Female,Bootcamp,2,63,Job Board,Marketing Analyst,0
+CAND-059,34,Male,PhD,9,95,Employee Referral,AI Lead,1
+CAND-060,27,Female,Master,4,80,University Career Fair,Research Analyst,1
+CAND-061,31,Male,Bachelor,6,78,LinkedIn,Backend Developer,1
+CAND-062,26,Female,Bootcamp,1,58,Job Board,QA Intern,0
+CAND-063,40,Male,Master,14,94,Employee Referral,Director of Engineering,1
+CAND-064,29,Female,Bachelor,3,70,Direct Application,Product Coordinator,1
+CAND-065,33,NonBinary,PhD,7,88,University Career Fair,Data Scientist,1
+CAND-066,27,Male,Bachelor,2,61,Job Board,Junior Backend Dev,0
+CAND-067,30,Female,Master,5,84,LinkedIn,Analytics Engineer,1
+CAND-068,35,Male,Bachelor,8,82,Employee Referral,Senior Data Analyst,1
+CAND-069,25,Female,Bootcamp,1,54,Job Board,Content Specialist,0
+CAND-070,32,Male,PhD,7,92,University Career Fair,Principal Scientist,1
+CAND-071,28,Female,Master,4,81,LinkedIn,Product Analyst,1
+CAND-072,29,Male,Bachelor,4,75,Direct Application,Support Engineer,1
+CAND-073,26,Female,Bachelor,1,60,Job Board,Intern Engineer,0
+CAND-074,37,Male,Master,11,90,Employee Referral,Engineering Lead,1
+CAND-075,30,Female,PhD,5,87,University Career Fair,NLP Researcher,1
+CAND-076,28,NonBinary,Bachelor,3,73,LinkedIn,UX Researcher,1
+CAND-077,33,Male,Master,7,86,Employee Referral,Cloud Engineer,1
+CAND-078,26,Female,Bootcamp,2,62,Job Board,QA Analyst,0
+CAND-079,35,Male,PhD,9,93,University Career Fair,AI Scientist,1
+CAND-080,29,Female,Bachelor,4,76,Direct Application,Business Analyst,1
+CAND-081,31,Male,Master,6,82,LinkedIn,Data Engineer,1
+CAND-082,25,Female,Bachelor,1,57,Job Board,Intern Analyst,0
+CAND-083,34,Male,PhD,8,91,Employee Referral,Principal Engineer,1
+CAND-084,28,Female,Master,4,83,University Career Fair,Data Scientist,1
+CAND-085,30,Male,Bachelor,5,77,Direct Application,Backend Specialist,1
+CAND-086,27,Female,Bootcamp,2,60,Job Board,Frontend Intern,0
+CAND-087,36,Male,Master,10,90,LinkedIn,Senior Engineer,1
+CAND-088,29,Female,PhD,5,86,Employee Referral,Research Engineer,1
+CAND-089,32,NonBinary,Bachelor,6,79,University Career Fair,Systems Engineer,1
+CAND-090,26,Male,Bootcamp,2,61,Job Board,Junior Dev,0
+CAND-091,33,Female,Master,7,88,LinkedIn,Analytics Manager,1
+CAND-092,30,Male,Bachelor,5,74,Direct Application,DevOps Engineer,1
+CAND-093,27,Female,PhD,3,82,University Career Fair,ML Scientist,1
+CAND-094,35,Male,Master,9,92,Employee Referral,Technical Lead,1
+CAND-095,28,Female,Bachelor,3,70,LinkedIn,Data Analyst,1
+CAND-096,26,Male,Bootcamp,1,58,Job Board,Intern Dev,0
+CAND-097,39,Male,PhD,13,97,Employee Referral,CTO Office,1
+CAND-098,31,Female,Master,6,85,University Career Fair,Product Lead,1
+CAND-099,29,NonBinary,Bachelor,4,76,Direct Application,UX Engineer,1
+CAND-100,27,Male,Bachelor,2,62,Job Board,Junior Analyst,0
+CAND-101,34,Female,Master,8,89,LinkedIn,Senior Analyst,1
+CAND-102,30,Male,PhD,6,90,Employee Referral,Research Lead,1
+CAND-103,28,Female,Bachelor,3,71,Job Board,Support Specialist,0
+CAND-104,33,Male,Master,7,85,University Career Fair,Platform Engineer,1
+CAND-105,26,Female,Bootcamp,2,64,Direct Application,Content Writer,0
+CAND-106,37,Male,PhD,11,93,Employee Referral,Senior Scientist,1
+CAND-107,29,Female,Bachelor,4,78,LinkedIn,Frontend Engineer,1
+CAND-108,31,NonBinary,Master,6,83,University Career Fair,Product Designer,1
+CAND-109,27,Male,Bachelor,2,65,Job Board,QA Tester,0
+CAND-110,35,Female,PhD,9,91,Employee Referral,Applied Scientist,1
+CAND-111,28,Male,Master,4,81,LinkedIn,Data Engineer,1
+CAND-112,26,Female,Bachelor,1,59,Job Board,Intern Analyst,0
+CAND-113,32,Male,Bachelor,7,80,Employee Referral,Backend Engineer,1
+CAND-114,30,Female,Master,5,86,University Career Fair,Analytics Lead,1
+CAND-115,29,Male,PhD,5,88,LinkedIn,ML Engineer,1
+CAND-116,25,Female,Bootcamp,1,55,Job Board,Junior QA,0
+CAND-117,36,Male,Master,10,92,Employee Referral,Engineering Manager,1
+CAND-118,27,Female,Bachelor,3,73,Direct Application,Data Analyst,1
+CAND-119,33,NonBinary,PhD,7,89,University Career Fair,NLP Engineer,1
+CAND-120,28,Male,Bachelor,4,69,Job Board,Web Developer,0
+CAND-121,31,Female,Master,6,84,LinkedIn,Product Analyst,1
+CAND-122,29,Male,Bachelor,4,74,Employee Referral,Backend Developer,1
+CAND-123,26,Female,Bootcamp,2,61,Job Board,Content Specialist,0
+CAND-124,34,Male,PhD,8,94,University Career Fair,Senior Researcher,1
+CAND-125,30,Female,Master,5,82,LinkedIn,Business Analyst,1
+CAND-126,32,Male,Bachelor,6,76,Direct Application,Systems Analyst,1
+CAND-127,27,Female,PhD,3,85,Employee Referral,Research Analyst,1
+CAND-128,35,Male,Master,9,91,University Career Fair,Technical Lead,1
+CAND-129,28,Female,Bachelor,3,72,Job Board,Support Engineer,0
+CAND-130,29,NonBinary,Master,4,79,LinkedIn,UX Researcher,1
+CAND-131,33,Male,Bachelor,7,81,Employee Referral,DevOps Engineer,1
+CAND-132,26,Female,Bootcamp,1,56,Job Board,Junior Frontend,0
+CAND-133,37,Male,PhD,11,95,University Career Fair,AI Lead,1
+CAND-134,30,Female,Master,5,85,LinkedIn,Engineering Analyst,1
+CAND-135,31,Male,Bachelor,6,77,Direct Application,Platform Dev,1
+CAND-136,27,Female,Bachelor,2,66,Job Board,QA Analyst,0
+CAND-137,34,NonBinary,PhD,8,90,Employee Referral,Data Scientist,1
+CAND-138,29,Male,Master,4,80,LinkedIn,Backend Specialist,1
+CAND-139,26,Female,Bootcamp,2,63,Job Board,Content Writer,0
+CAND-140,32,Male,Bachelor,6,78,University Career Fair,Software Engineer,1
+CAND-141,28,Female,Master,4,83,Employee Referral,Analytics Engineer,1
+CAND-142,30,Male,PhD,6,88,LinkedIn,Research Engineer,1
+CAND-143,25,Female,Bachelor,1,58,Job Board,Intern Dev,0
+CAND-144,36,Male,Master,10,93,Employee Referral,Senior Dev,1
+CAND-145,29,Female,PhD,5,87,University Career Fair,Applied Scientist,1
+CAND-146,31,NonBinary,Bachelor,5,76,Direct Application,UX Engineer,1
+CAND-147,27,Male,Bootcamp,2,62,Job Board,Junior Web Dev,0
+CAND-148,33,Female,Master,7,86,LinkedIn,Product Lead,1
+CAND-149,30,Male,Bachelor,5,73,Employee Referral,DevOps Lead,1
+CAND-150,28,Female,PhD,4,84,University Career Fair,ML Researcher,1
+CAND-151,26,Male,Bachelor,2,64,Job Board,Junior Analyst,0
+CAND-152,35,Female,Master,9,89,LinkedIn,Data Lead,1
+CAND-153,32,Male,PhD,7,91,Employee Referral,Principal Scientist,1
+CAND-154,29,Female,Bachelor,3,74,Direct Application,Frontend Developer,1
+CAND-155,27,Male,Bootcamp,2,61,Job Board,QA Tester,0
+CAND-156,34,Female,Master,8,87,University Career Fair,Analytics Manager,1
+CAND-157,30,NonBinary,PhD,5,88,LinkedIn,NLP Engineer,1
+CAND-158,28,Male,Bachelor,4,75,Employee Referral,Backend Engineer,1
+CAND-159,26,Female,Bootcamp,1,57,Job Board,Content Intern,0
+CAND-160,33,Male,Master,7,85,University Career Fair,Cloud Engineer,1
+CAND-161,31,Female,Bachelor,6,80,LinkedIn,Product Designer,1
+CAND-162,29,Male,PhD,5,90,Employee Referral,Senior Researcher,1
+CAND-163,27,Female,Bachelor,2,67,Job Board,Junior Engineer,0
+CAND-164,36,Male,Master,10,92,University Career Fair,Engineering Lead,1
+CAND-165,30,Female,Master,5,84,LinkedIn,Systems Lead,1
+CAND-166,28,NonBinary,Bachelor,3,73,Direct Application,UX Designer,1
+CAND-167,35,Male,PhD,9,94,Employee Referral,Technical Architect,1
+CAND-168,26,Female,Bootcamp,2,62,Job Board,Junior QA,0
+CAND-169,32,Male,Bachelor,6,78,LinkedIn,Software Developer,1
+CAND-170,29,Female,Master,4,83,University Career Fair,Data Analyst,1
+CAND-171,31,Male,PhD,6,89,Employee Referral,AI Scientist,1
+CAND-172,25,Female,Bachelor,1,56,Job Board,Intern Analyst,0
+CAND-173,34,Male,Master,8,91,LinkedIn,Senior Product Dev,1
+CAND-174,28,Female,PhD,4,85,University Career Fair,Research Scientist,1
+CAND-175,30,Male,Bachelor,5,76,Direct Application,Backend Dev,1
+CAND-176,27,Female,Bootcamp,2,61,Job Board,Content Manager,0
+CAND-177,37,NonBinary,Master,11,93,Employee Referral,Engineering Manager,1
+CAND-178,29,Male,Bachelor,4,74,LinkedIn,DevOps Engineer,1
+CAND-179,26,Female,PhD,2,80,University Career Fair,ML Intern,1
+CAND-180,33,Male,Master,7,87,Employee Referral,Data Engineer,1
+CAND-181,28,Female,Bachelor,3,71,Job Board,Support Analyst,0
+CAND-182,31,Male,PhD,6,90,LinkedIn,Principal Dev,1
+CAND-183,27,Female,Master,3,82,University Career Fair,Analytics Lead,1
+CAND-184,35,Male,Bachelor,9,81,Employee Referral,Senior Dev,1
+CAND-185,26,Female,Bootcamp,1,55,Job Board,Intern Dev,0
+CAND-186,32,NonBinary,Master,6,84,LinkedIn,Product Analyst,1
+CAND-187,29,Male,PhD,5,88,University Career Fair,AI Engineer,1
+CAND-188,28,Female,Bachelor,3,72,Direct Application,QA Engineer,0
+CAND-189,34,Male,Master,8,92,Employee Referral,Cloud Architect,1
+CAND-190,30,Female,PhD,5,86,LinkedIn,Research Lead,1
+CAND-191,31,Male,Bachelor,6,79,University Career Fair,Systems Engineer,1
+CAND-192,27,Female,Bootcamp,2,63,Job Board,Frontend Intern,0
+CAND-193,36,Male,Master,10,93,Employee Referral,Technical Lead,1
+CAND-194,29,Female,Bachelor,4,78,LinkedIn,Business Analyst,1
+CAND-195,33,NonBinary,PhD,7,90,University Career Fair,Data Scientist,1
+CAND-196,26,Male,Bachelor,2,64,Job Board,Junior Web Dev,0
+CAND-197,38,Female,Master,12,91,Employee Referral,Head of Analytics,1
+CAND-198,30,Male,PhD,6,87,LinkedIn,ML Engineer,1
+CAND-199,28,Female,Bachelor,3,75,University Career Fair,Product Designer,1
+CAND-200,27,Male,Bootcamp,2,60,Job Board,Junior Developer,0
