@@ -1,201 +1,901 @@
 candidate_id,age,gender,education,years_experience,assessment_score,referral_source,role_applied,hired
-CAND-001,28,Female,Bachelor,4,82,Employee Referral,Software Engineer,1
-CAND-002,34,Male,Master,9,91,LinkedIn,Data Scientist,1
-CAND-003,26,Female,Bootcamp,2,68,Job Board,Frontend Developer,0
-CAND-004,31,Male,Bachelor,6,77,Direct Application,Product Manager,1
-CAND-005,29,NonBinary,PhD,5,88,University Career Fair,ML Engineer,1
-CAND-006,41,Male,Master,15,93,Employee Referral,Engineering Manager,1
-CAND-007,24,Female,Bachelor,1,61,Job Board,Junior Developer,0
-CAND-008,36,Male,Bachelor,10,79,LinkedIn,Senior Engineer,1
-CAND-009,27,Female,Master,3,85,University Career Fair,Data Analyst,1
-CAND-010,30,Male,Bootcamp,4,70,Direct Application,Backend Developer,0
-CAND-011,33,Female,PhD,7,90,Employee Referral,Research Scientist,1
-CAND-012,25,Male,Bachelor,2,64,Job Board,Junior Analyst,0
-CAND-013,38,Female,Master,12,87,LinkedIn,Product Lead,1
-CAND-014,29,NonBinary,Bachelor,4,75,Direct Application,UX Designer,1
-CAND-015,32,Male,Master,7,83,Employee Referral,Backend Engineer,1
-CAND-016,27,Female,Bootcamp,2,59,Job Board,QA Engineer,0
-CAND-017,35,Male,PhD,9,94,University Career Fair,AI Researcher,1
-CAND-018,28,Female,Bachelor,3,71,LinkedIn,Data Analyst,1
-CAND-019,31,Male,Master,6,80,Employee Referral,DevOps Engineer,1
-CAND-020,26,Female,Bachelor,2,63,Direct Application,Support Engineer,0
-CAND-021,43,Male,Master,18,96,Employee Referral,VP of Engineering,1
-CAND-022,30,Female,PhD,5,89,University Career Fair,NLP Engineer,1
-CAND-023,27,Male,Bootcamp,3,67,Job Board,Web Developer,0
-CAND-024,34,Female,Master,8,86,LinkedIn,Analytics Manager,1
-CAND-025,29,NonBinary,Bachelor,4,74,Direct Application,Product Designer,1
-CAND-026,32,Male,Bachelor,6,78,Employee Referral,Systems Analyst,1
-CAND-027,25,Female,Master,1,66,Job Board,Junior Data Scientist,0
-CAND-028,37,Male,PhD,11,92,University Career Fair,Principal Engineer,1
-CAND-029,28,Female,Bachelor,3,73,LinkedIn,Frontend Engineer,1
-CAND-030,33,Male,Master,7,84,Employee Referral,Cloud Architect,1
-CAND-031,26,Female,Bootcamp,2,57,Job Board,Content Writer,0
-CAND-032,30,Male,Bachelor,5,76,Direct Application,Software Engineer,1
-CAND-033,36,Female,Master,10,88,LinkedIn,Engineering Lead,1
-CAND-034,27,NonBinary,Bachelor,2,65,Job Board,Junior Engineer,0
-CAND-035,31,Male,PhD,6,91,Employee Referral,Research Engineer,1
-CAND-036,29,Female,Master,4,81,University Career Fair,Product Analyst,1
-CAND-037,35,Male,Bachelor,9,79,LinkedIn,Backend Developer,1
-CAND-038,28,Female,Bootcamp,3,62,Direct Application,QA Tester,0
-CAND-039,32,Male,Master,7,85,Employee Referral,Data Engineer,1
-CAND-040,26,Female,Bachelor,1,58,Job Board,Intern Developer,0
-CAND-041,34,Male,PhD,8,93,University Career Fair,Senior Researcher,1
-CAND-042,30,Female,Master,5,83,LinkedIn,Business Analyst,1
-CAND-043,27,Male,Bachelor,3,69,Job Board,Junior Analyst,0
-CAND-044,38,Female,Master,12,90,Employee Referral,Head of Data,1
-CAND-045,31,NonBinary,Bachelor,5,77,Direct Application,UX Researcher,1
-CAND-046,29,Male,Bootcamp,4,68,Job Board,Web Developer,0
-CAND-047,33,Female,PhD,7,92,University Career Fair,Applied Scientist,1
-CAND-048,28,Male,Master,4,80,LinkedIn,Solutions Architect,1
-CAND-049,35,Female,Bachelor,9,84,Employee Referral,Senior Engineer,1
-CAND-050,26,Male,Bootcamp,2,60,Job Board,Frontend Intern,0
-CAND-051,32,Female,Master,7,87,LinkedIn,Data Lead,1
-CAND-052,29,Male,Bachelor,4,72,Job Board,Software Tester,0
-CAND-053,27,Female,PhD,3,83,University Career Fair,ML Engineer,1
-CAND-054,33,Male,Master,8,89,Employee Referral,Platform Engineer,1
-CAND-055,25,Female,Bachelor,1,55,Job Board,Support Associate,0
-CAND-056,36,NonBinary,Master,10,91,LinkedIn,Senior Product Manager,1
-CAND-057,30,Male,Bachelor,5,74,Direct Application,DevOps Specialist,1
-CAND-058,28,Female,Bootcamp,2,63,Job Board,Marketing Analyst,0
-CAND-059,34,Male,PhD,9,95,Employee Referral,AI Lead,1
-CAND-060,27,Female,Master,4,80,University Career Fair,Research Analyst,1
-CAND-061,31,Male,Bachelor,6,78,LinkedIn,Backend Developer,1
-CAND-062,26,Female,Bootcamp,1,58,Job Board,QA Intern,0
-CAND-063,40,Male,Master,14,94,Employee Referral,Director of Engineering,1
-CAND-064,29,Female,Bachelor,3,70,Direct Application,Product Coordinator,1
-CAND-065,33,NonBinary,PhD,7,88,University Career Fair,Data Scientist,1
-CAND-066,27,Male,Bachelor,2,61,Job Board,Junior Backend Dev,0
-CAND-067,30,Female,Master,5,84,LinkedIn,Analytics Engineer,1
-CAND-068,35,Male,Bachelor,8,82,Employee Referral,Senior Data Analyst,1
-CAND-069,25,Female,Bootcamp,1,54,Job Board,Content Specialist,0
-CAND-070,32,Male,PhD,7,92,University Career Fair,Principal Scientist,1
-CAND-071,28,Female,Master,4,81,LinkedIn,Product Analyst,1
-CAND-072,29,Male,Bachelor,4,75,Direct Application,Support Engineer,1
-CAND-073,26,Female,Bachelor,1,60,Job Board,Intern Engineer,0
-CAND-074,37,Male,Master,11,90,Employee Referral,Engineering Lead,1
-CAND-075,30,Female,PhD,5,87,University Career Fair,NLP Researcher,1
-CAND-076,28,NonBinary,Bachelor,3,73,LinkedIn,UX Researcher,1
-CAND-077,33,Male,Master,7,86,Employee Referral,Cloud Engineer,1
-CAND-078,26,Female,Bootcamp,2,62,Job Board,QA Analyst,0
-CAND-079,35,Male,PhD,9,93,University Career Fair,AI Scientist,1
-CAND-080,29,Female,Bachelor,4,76,Direct Application,Business Analyst,1
-CAND-081,31,Male,Master,6,82,LinkedIn,Data Engineer,1
-CAND-082,25,Female,Bachelor,1,57,Job Board,Intern Analyst,0
-CAND-083,34,Male,PhD,8,91,Employee Referral,Principal Engineer,1
-CAND-084,28,Female,Master,4,83,University Career Fair,Data Scientist,1
-CAND-085,30,Male,Bachelor,5,77,Direct Application,Backend Specialist,1
-CAND-086,27,Female,Bootcamp,2,60,Job Board,Frontend Intern,0
-CAND-087,36,Male,Master,10,90,LinkedIn,Senior Engineer,1
-CAND-088,29,Female,PhD,5,86,Employee Referral,Research Engineer,1
-CAND-089,32,NonBinary,Bachelor,6,79,University Career Fair,Systems Engineer,1
-CAND-090,26,Male,Bootcamp,2,61,Job Board,Junior Dev,0
-CAND-091,33,Female,Master,7,88,LinkedIn,Analytics Manager,1
-CAND-092,30,Male,Bachelor,5,74,Direct Application,DevOps Engineer,1
-CAND-093,27,Female,PhD,3,82,University Career Fair,ML Scientist,1
-CAND-094,35,Male,Master,9,92,Employee Referral,Technical Lead,1
-CAND-095,28,Female,Bachelor,3,70,LinkedIn,Data Analyst,1
-CAND-096,26,Male,Bootcamp,1,58,Job Board,Intern Dev,0
-CAND-097,39,Male,PhD,13,97,Employee Referral,CTO Office,1
-CAND-098,31,Female,Master,6,85,University Career Fair,Product Lead,1
-CAND-099,29,NonBinary,Bachelor,4,76,Direct Application,UX Engineer,1
-CAND-100,27,Male,Bachelor,2,62,Job Board,Junior Analyst,0
-CAND-101,34,Female,Master,8,89,LinkedIn,Senior Analyst,1
-CAND-102,30,Male,PhD,6,90,Employee Referral,Research Lead,1
-CAND-103,28,Female,Bachelor,3,71,Job Board,Support Specialist,0
-CAND-104,33,Male,Master,7,85,University Career Fair,Platform Engineer,1
-CAND-105,26,Female,Bootcamp,2,64,Direct Application,Content Writer,0
-CAND-106,37,Male,PhD,11,93,Employee Referral,Senior Scientist,1
-CAND-107,29,Female,Bachelor,4,78,LinkedIn,Frontend Engineer,1
-CAND-108,31,NonBinary,Master,6,83,University Career Fair,Product Designer,1
-CAND-109,27,Male,Bachelor,2,65,Job Board,QA Tester,0
-CAND-110,35,Female,PhD,9,91,Employee Referral,Applied Scientist,1
-CAND-111,28,Male,Master,4,81,LinkedIn,Data Engineer,1
-CAND-112,26,Female,Bachelor,1,59,Job Board,Intern Analyst,0
-CAND-113,32,Male,Bachelor,7,80,Employee Referral,Backend Engineer,1
-CAND-114,30,Female,Master,5,86,University Career Fair,Analytics Lead,1
-CAND-115,29,Male,PhD,5,88,LinkedIn,ML Engineer,1
-CAND-116,25,Female,Bootcamp,1,55,Job Board,Junior QA,0
-CAND-117,36,Male,Master,10,92,Employee Referral,Engineering Manager,1
-CAND-118,27,Female,Bachelor,3,73,Direct Application,Data Analyst,1
-CAND-119,33,NonBinary,PhD,7,89,University Career Fair,NLP Engineer,1
-CAND-120,28,Male,Bachelor,4,69,Job Board,Web Developer,0
-CAND-121,31,Female,Master,6,84,LinkedIn,Product Analyst,1
-CAND-122,29,Male,Bachelor,4,74,Employee Referral,Backend Developer,1
-CAND-123,26,Female,Bootcamp,2,61,Job Board,Content Specialist,0
-CAND-124,34,Male,PhD,8,94,University Career Fair,Senior Researcher,1
-CAND-125,30,Female,Master,5,82,LinkedIn,Business Analyst,1
-CAND-126,32,Male,Bachelor,6,76,Direct Application,Systems Analyst,1
-CAND-127,27,Female,PhD,3,85,Employee Referral,Research Analyst,1
-CAND-128,35,Male,Master,9,91,University Career Fair,Technical Lead,1
-CAND-129,28,Female,Bachelor,3,72,Job Board,Support Engineer,0
-CAND-130,29,NonBinary,Master,4,79,LinkedIn,UX Researcher,1
-CAND-131,33,Male,Bachelor,7,81,Employee Referral,DevOps Engineer,1
-CAND-132,26,Female,Bootcamp,1,56,Job Board,Junior Frontend,0
-CAND-133,37,Male,PhD,11,95,University Career Fair,AI Lead,1
-CAND-134,30,Female,Master,5,85,LinkedIn,Engineering Analyst,1
-CAND-135,31,Male,Bachelor,6,77,Direct Application,Platform Dev,1
-CAND-136,27,Female,Bachelor,2,66,Job Board,QA Analyst,0
-CAND-137,34,NonBinary,PhD,8,90,Employee Referral,Data Scientist,1
-CAND-138,29,Male,Master,4,80,LinkedIn,Backend Specialist,1
-CAND-139,26,Female,Bootcamp,2,63,Job Board,Content Writer,0
-CAND-140,32,Male,Bachelor,6,78,University Career Fair,Software Engineer,1
-CAND-141,28,Female,Master,4,83,Employee Referral,Analytics Engineer,1
-CAND-142,30,Male,PhD,6,88,LinkedIn,Research Engineer,1
-CAND-143,25,Female,Bachelor,1,58,Job Board,Intern Dev,0
-CAND-144,36,Male,Master,10,93,Employee Referral,Senior Dev,1
-CAND-145,29,Female,PhD,5,87,University Career Fair,Applied Scientist,1
-CAND-146,31,NonBinary,Bachelor,5,76,Direct Application,UX Engineer,1
-CAND-147,27,Male,Bootcamp,2,62,Job Board,Junior Web Dev,0
-CAND-148,33,Female,Master,7,86,LinkedIn,Product Lead,1
-CAND-149,30,Male,Bachelor,5,73,Employee Referral,DevOps Lead,1
-CAND-150,28,Female,PhD,4,84,University Career Fair,ML Researcher,1
-CAND-151,26,Male,Bachelor,2,64,Job Board,Junior Analyst,0
-CAND-152,35,Female,Master,9,89,LinkedIn,Data Lead,1
-CAND-153,32,Male,PhD,7,91,Employee Referral,Principal Scientist,1
-CAND-154,29,Female,Bachelor,3,74,Direct Application,Frontend Developer,1
-CAND-155,27,Male,Bootcamp,2,61,Job Board,QA Tester,0
-CAND-156,34,Female,Master,8,87,University Career Fair,Analytics Manager,1
-CAND-157,30,NonBinary,PhD,5,88,LinkedIn,NLP Engineer,1
-CAND-158,28,Male,Bachelor,4,75,Employee Referral,Backend Engineer,1
-CAND-159,26,Female,Bootcamp,1,57,Job Board,Content Intern,0
-CAND-160,33,Male,Master,7,85,University Career Fair,Cloud Engineer,1
-CAND-161,31,Female,Bachelor,6,80,LinkedIn,Product Designer,1
-CAND-162,29,Male,PhD,5,90,Employee Referral,Senior Researcher,1
-CAND-163,27,Female,Bachelor,2,67,Job Board,Junior Engineer,0
-CAND-164,36,Male,Master,10,92,University Career Fair,Engineering Lead,1
-CAND-165,30,Female,Master,5,84,LinkedIn,Systems Lead,1
-CAND-166,28,NonBinary,Bachelor,3,73,Direct Application,UX Designer,1
-CAND-167,35,Male,PhD,9,94,Employee Referral,Technical Architect,1
-CAND-168,26,Female,Bootcamp,2,62,Job Board,Junior QA,0
-CAND-169,32,Male,Bachelor,6,78,LinkedIn,Software Developer,1
-CAND-170,29,Female,Master,4,83,University Career Fair,Data Analyst,1
-CAND-171,31,Male,PhD,6,89,Employee Referral,AI Scientist,1
-CAND-172,25,Female,Bachelor,1,56,Job Board,Intern Analyst,0
-CAND-173,34,Male,Master,8,91,LinkedIn,Senior Product Dev,1
-CAND-174,28,Female,PhD,4,85,University Career Fair,Research Scientist,1
-CAND-175,30,Male,Bachelor,5,76,Direct Application,Backend Dev,1
-CAND-176,27,Female,Bootcamp,2,61,Job Board,Content Manager,0
-CAND-177,37,NonBinary,Master,11,93,Employee Referral,Engineering Manager,1
-CAND-178,29,Male,Bachelor,4,74,LinkedIn,DevOps Engineer,1
-CAND-179,26,Female,PhD,2,80,University Career Fair,ML Intern,1
-CAND-180,33,Male,Master,7,87,Employee Referral,Data Engineer,1
-CAND-181,28,Female,Bachelor,3,71,Job Board,Support Analyst,0
-CAND-182,31,Male,PhD,6,90,LinkedIn,Principal Dev,1
-CAND-183,27,Female,Master,3,82,University Career Fair,Analytics Lead,1
-CAND-184,35,Male,Bachelor,9,81,Employee Referral,Senior Dev,1
-CAND-185,26,Female,Bootcamp,1,55,Job Board,Intern Dev,0
-CAND-186,32,NonBinary,Master,6,84,LinkedIn,Product Analyst,1
-CAND-187,29,Male,PhD,5,88,University Career Fair,AI Engineer,1
-CAND-188,28,Female,Bachelor,3,72,Direct Application,QA Engineer,0
-CAND-189,34,Male,Master,8,92,Employee Referral,Cloud Architect,1
-CAND-190,30,Female,PhD,5,86,LinkedIn,Research Lead,1
-CAND-191,31,Male,Bachelor,6,79,University Career Fair,Systems Engineer,1
-CAND-192,27,Female,Bootcamp,2,63,Job Board,Frontend Intern,0
-CAND-193,36,Male,Master,10,93,Employee Referral,Technical Lead,1
-CAND-194,29,Female,Bachelor,4,78,LinkedIn,Business Analyst,1
-CAND-195,33,NonBinary,PhD,7,90,University Career Fair,Data Scientist,1
-CAND-196,26,Male,Bachelor,2,64,Job Board,Junior Web Dev,0
-CAND-197,38,Female,Master,12,91,Employee Referral,Head of Analytics,1
-CAND-198,30,Male,PhD,6,87,LinkedIn,ML Engineer,1
-CAND-199,28,Female,Bachelor,3,75,University Career Fair,Product Designer,1
-CAND-200,27,Male,Bootcamp,2,60,Job Board,Junior Developer,0
+CAND-001,24,Female,Master,3,57,Company Website,QA Engineer,0
+CAND-002,50,Male,Master,9,60,LinkedIn,Data Scientist,0
+CAND-003,45,Male,Bachelor,5,60,Company Website,Software Engineer,0
+CAND-004,37,Female,Bachelor,10,67,LinkedIn,QA Engineer,0
+CAND-005,37,Female,Master,8,63,Employee Referral,Software Engineer,0
+CAND-006,53,Female,High School,9,54,Employee Referral,Software Engineer,0
+CAND-007,24,Non-binary,Bachelor,4,50,LinkedIn,QA Engineer,0
+CAND-008,47,Female,Bachelor,11,51,LinkedIn,Data Scientist,0
+CAND-009,28,Male,Master,2,47,Company Website,HR Analyst,0
+CAND-010,24,Male,High School,4,45,Employee Referral,Product Manager,0
+CAND-011,41,Male,Bachelor,6,47,Employee Referral,Product Manager,0
+CAND-012,58,Female,Bachelor,16,72,Employee Referral,Data Scientist,1
+CAND-013,48,Male,Bachelor,10,70,Company Website,Software Engineer,0
+CAND-014,49,Female,High School,9,49,LinkedIn,HR Analyst,0
+CAND-015,48,Male,Bachelor,13,67,Company Website,Software Engineer,0
+CAND-016,50,Male,Bachelor,6,47,LinkedIn,Data Scientist,0
+CAND-017,40,Male,Bachelor,11,59,Employee Referral,Software Engineer,0
+CAND-018,25,Male,High School,1,41,LinkedIn,Software Engineer,0
+CAND-019,52,Female,Bachelor,18,75,LinkedIn,Product Manager,1
+CAND-020,38,Male,Bachelor,6,50,Company Website,QA Engineer,0
+CAND-021,40,Female,High School,12,68,Company Website,QA Engineer,0
+CAND-022,35,Male,Master,5,55,Company Website,QA Engineer,0
+CAND-023,27,Female,Bachelor,9,54,Company Website,Data Scientist,1
+CAND-024,56,Female,Master,17,62,Recruiter,Data Scientist,1
+CAND-025,50,Female,PhD,11,68,Employee Referral,Software Engineer,0
+CAND-026,45,Female,High School,4,57,Employee Referral,QA Engineer,0
+CAND-027,36,Female,Bachelor,9,61,Company Website,Data Scientist,0
+CAND-028,52,Male,Master,11,82,Company Website,Product Manager,1
+CAND-029,41,Male,Bachelor,10,72,Company Website,Software Engineer,0
+CAND-030,37,Female,Bachelor,7,54,Company Website,QA Engineer,0
+CAND-031,38,Female,Bachelor,8,55,LinkedIn,QA Engineer,0
+CAND-032,29,Female,High School,4,54,Company Website,QA Engineer,0
+CAND-033,24,Male,Bachelor,0,41,LinkedIn,Software Engineer,0
+CAND-034,42,Female,PhD,7,70,LinkedIn,HR Analyst,0
+CAND-035,54,Female,PhD,9,66,Employee Referral,Software Engineer,0
+CAND-036,23,Female,High School,5,53,LinkedIn,Data Scientist,0
+CAND-037,53,Male,Master,19,80,Company Website,Software Engineer,1
+CAND-038,52,Female,Bachelor,16,82,Company Website,Software Engineer,1
+CAND-039,31,Male,Master,5,58,LinkedIn,Product Manager,0
+CAND-040,45,Male,High School,9,55,Recruiter,Software Engineer,0
+CAND-041,27,Male,Master,3,66,LinkedIn,Data Scientist,0
+CAND-042,49,Male,Master,12,73,Recruiter,Product Manager,1
+CAND-043,47,Male,High School,8,52,Employee Referral,QA Engineer,0
+CAND-044,34,Female,High School,2,48,LinkedIn,Product Manager,0
+CAND-045,23,Male,Master,3,56,LinkedIn,Product Manager,0
+CAND-046,57,Male,High School,8,58,LinkedIn,Software Engineer,0
+CAND-047,37,Female,Bachelor,9,48,Company Website,QA Engineer,0
+CAND-048,54,Male,Master,9,49,LinkedIn,Software Engineer,0
+CAND-049,46,Female,Bachelor,6,48,Recruiter,Software Engineer,0
+CAND-050,50,Male,Bachelor,14,58,LinkedIn,Software Engineer,1
+CAND-051,49,Male,Bachelor,14,60,Employee Referral,Product Manager,1
+CAND-052,28,Male,High School,5,56,LinkedIn,Data Scientist,0
+CAND-053,34,Male,PhD,4,56,Recruiter,Product Manager,0
+CAND-054,38,Male,Bachelor,8,60,LinkedIn,Data Scientist,0
+CAND-055,39,Male,Bachelor,9,49,Company Website,Data Scientist,0
+CAND-056,22,Male,Bachelor,0,44,Company Website,Data Scientist,0
+CAND-057,41,Female,PhD,8,67,LinkedIn,Software Engineer,1
+CAND-058,26,Male,High School,2,52,Employee Referral,Data Scientist,0
+CAND-059,49,Male,Master,10,57,LinkedIn,Product Manager,0
+CAND-060,46,Female,Master,9,63,Company Website,Product Manager,0
+CAND-061,56,Female,Master,21,94,Company Website,Software Engineer,1
+CAND-062,49,Male,PhD,9,63,Company Website,Product Manager,0
+CAND-063,34,Female,Master,7,54,LinkedIn,Data Scientist,0
+CAND-064,57,Female,Master,14,67,LinkedIn,Software Engineer,1
+CAND-065,36,Female,High School,5,52,LinkedIn,Software Engineer,0
+CAND-066,33,Female,Master,12,64,LinkedIn,Data Scientist,1
+CAND-067,55,Female,Bachelor,8,58,LinkedIn,Data Scientist,0
+CAND-068,35,Male,Bachelor,8,46,Recruiter,Product Manager,0
+CAND-069,23,Female,Master,1,44,Company Website,Software Engineer,0
+CAND-070,38,Male,PhD,10,63,Company Website,QA Engineer,0
+CAND-071,51,Male,Master,9,60,LinkedIn,Software Engineer,0
+CAND-072,28,Female,Bachelor,3,47,LinkedIn,Product Manager,0
+CAND-073,38,Female,Bachelor,11,60,Company Website,QA Engineer,0
+CAND-074,25,Male,Bachelor,3,52,LinkedIn,Data Scientist,0
+CAND-075,47,Female,Bachelor,8,65,LinkedIn,Software Engineer,0
+CAND-076,39,Female,Bachelor,8,57,Company Website,Data Scientist,0
+CAND-077,33,Male,High School,5,54,Company Website,HR Analyst,0
+CAND-078,29,Non-binary,High School,3,44,Recruiter,HR Analyst,0
+CAND-079,42,Male,Master,7,64,LinkedIn,Software Engineer,0
+CAND-080,46,Female,Bachelor,7,60,Company Website,QA Engineer,0
+CAND-081,56,Male,Master,20,82,LinkedIn,Data Scientist,1
+CAND-082,37,Male,Bachelor,5,60,LinkedIn,Software Engineer,0
+CAND-083,27,Female,High School,1,51,Employee Referral,Product Manager,0
+CAND-084,52,Male,High School,6,52,LinkedIn,Data Scientist,0
+CAND-085,44,Female,Bachelor,8,60,Company Website,Data Scientist,0
+CAND-086,47,Female,PhD,12,76,Company Website,QA Engineer,0
+CAND-087,24,Male,Bachelor,4,48,LinkedIn,Data Scientist,0
+CAND-088,32,Female,Bachelor,6,50,Recruiter,Product Manager,0
+CAND-089,50,Female,Master,9,63,Company Website,Data Scientist,0
+CAND-090,52,Male,PhD,8,65,Employee Referral,Software Engineer,0
+CAND-091,37,Non-binary,Bachelor,3,45,Company Website,Data Scientist,0
+CAND-092,51,Male,High School,5,51,Recruiter,HR Analyst,0
+CAND-093,52,Male,High School,11,58,LinkedIn,Data Scientist,0
+CAND-094,35,Non-binary,High School,2,35,Company Website,Software Engineer,0
+CAND-095,55,Female,Bachelor,17,67,Employee Referral,Product Manager,1
+CAND-096,31,Female,Bachelor,5,53,LinkedIn,HR Analyst,0
+CAND-097,30,Female,Master,8,59,Company Website,HR Analyst,0
+CAND-098,46,Female,Bachelor,12,74,Recruiter,Product Manager,0
+CAND-099,45,Male,Bachelor,8,48,Company Website,Data Scientist,0
+CAND-100,26,Female,Bachelor,0,41,Employee Referral,Product Manager,0
+CAND-101,52,Male,Master,9,41,Company Website,QA Engineer,0
+CAND-102,28,Female,Bachelor,5,50,Employee Referral,QA Engineer,0
+CAND-103,51,Female,Master,10,60,Employee Referral,QA Engineer,0
+CAND-104,21,Male,Master,3,50,Company Website,Data Scientist,0
+CAND-105,51,Female,Bachelor,8,67,LinkedIn,Software Engineer,0
+CAND-106,50,Female,High School,9,63,LinkedIn,Product Manager,0
+CAND-107,50,Female,Bachelor,9,60,Company Website,Software Engineer,0
+CAND-108,46,Male,Bachelor,11,59,Employee Referral,Software Engineer,1
+CAND-109,38,Male,Master,11,72,Company Website,Data Scientist,0
+CAND-110,47,Male,Bachelor,3,52,LinkedIn,Product Manager,0
+CAND-111,31,Female,Master,3,48,LinkedIn,QA Engineer,0
+CAND-112,50,Female,Bachelor,5,41,Company Website,QA Engineer,0
+CAND-113,42,Male,Bachelor,7,53,Employee Referral,QA Engineer,0
+CAND-114,38,Male,Bachelor,5,60,LinkedIn,QA Engineer,0
+CAND-115,40,Male,Bachelor,5,72,Company Website,Product Manager,0
+CAND-116,42,Male,Bachelor,7,57,Employee Referral,Software Engineer,0
+CAND-117,22,Male,Bachelor,2,44,Recruiter,Product Manager,0
+CAND-118,26,Female,Bachelor,0,39,LinkedIn,Software Engineer,0
+CAND-119,30,Female,Master,4,60,Recruiter,Software Engineer,0
+CAND-120,25,Male,High School,6,38,Company Website,Software Engineer,0
+CAND-121,37,Female,Master,3,59,Employee Referral,QA Engineer,0
+CAND-122,46,Male,Bachelor,7,63,LinkedIn,QA Engineer,0
+CAND-123,45,Male,High School,10,61,Company Website,HR Analyst,0
+CAND-124,38,Male,Bachelor,5,52,Company Website,HR Analyst,0
+CAND-125,53,Male,Bachelor,9,64,LinkedIn,HR Analyst,0
+CAND-126,42,Male,Bachelor,9,61,Company Website,Software Engineer,0
+CAND-127,24,Male,Bachelor,2,44,Company Website,QA Engineer,0
+CAND-128,50,Male,PhD,14,84,Company Website,QA Engineer,1
+CAND-129,42,Male,Bachelor,7,54,LinkedIn,QA Engineer,0
+CAND-130,45,Female,Bachelor,10,67,Company Website,Software Engineer,0
+CAND-131,42,Male,Bachelor,11,42,LinkedIn,Software Engineer,0
+CAND-132,42,Male,High School,7,64,Recruiter,HR Analyst,0
+CAND-133,24,Female,Bachelor,5,66,Recruiter,Software Engineer,0
+CAND-134,42,Female,Bachelor,4,53,LinkedIn,Data Scientist,0
+CAND-135,51,Male,Bachelor,7,61,LinkedIn,Data Scientist,0
+CAND-136,32,Male,High School,6,57,LinkedIn,Software Engineer,0
+CAND-137,43,Female,PhD,13,63,Company Website,Software Engineer,0
+CAND-138,22,Female,Bachelor,0,52,Employee Referral,HR Analyst,0
+CAND-139,34,Female,Master,9,55,Company Website,QA Engineer,1
+CAND-140,37,Female,Bachelor,6,51,LinkedIn,HR Analyst,0
+CAND-141,58,Male,High School,11,68,LinkedIn,Software Engineer,1
+CAND-142,29,Female,Master,8,68,LinkedIn,Software Engineer,0
+CAND-143,31,Female,Bachelor,10,55,Employee Referral,Data Scientist,0
+CAND-144,36,Male,Master,7,53,Company Website,Data Scientist,0
+CAND-145,58,Female,Bachelor,18,65,Company Website,Software Engineer,1
+CAND-146,53,Female,Bachelor,16,74,LinkedIn,QA Engineer,1
+CAND-147,22,Male,Master,0,43,Recruiter,HR Analyst,0
+CAND-148,29,Male,Bachelor,0,51,LinkedIn,Data Scientist,0
+CAND-149,52,Non-binary,Bachelor,8,64,Employee Referral,Data Scientist,0
+CAND-150,23,Male,Bachelor,1,49,Recruiter,Data Scientist,0
+CAND-151,53,Male,Bachelor,10,69,Company Website,Software Engineer,1
+CAND-152,31,Male,PhD,6,57,Recruiter,Software Engineer,1
+CAND-153,55,Male,Bachelor,16,66,LinkedIn,Data Scientist,1
+CAND-154,32,Male,Bachelor,3,44,Employee Referral,Data Scientist,0
+CAND-155,37,Non-binary,Master,7,67,LinkedIn,Product Manager,0
+CAND-156,46,Male,Bachelor,11,56,Company Website,QA Engineer,1
+CAND-157,25,Male,Master,0,53,LinkedIn,Software Engineer,0
+CAND-158,42,Female,Bachelor,9,59,LinkedIn,Software Engineer,0
+CAND-159,40,Male,Bachelor,5,46,LinkedIn,Software Engineer,0
+CAND-160,50,Female,Master,16,66,LinkedIn,Software Engineer,1
+CAND-161,58,Male,High School,18,79,Company Website,Product Manager,1
+CAND-162,46,Male,Bachelor,15,68,Company Website,QA Engineer,0
+CAND-163,36,Non-binary,Bachelor,8,50,LinkedIn,HR Analyst,0
+CAND-164,36,Non-binary,Master,4,58,Recruiter,Product Manager,0
+CAND-165,36,Female,Master,9,61,Recruiter,Data Scientist,0
+CAND-166,51,Male,Bachelor,5,82,LinkedIn,Software Engineer,1
+CAND-167,33,Male,High School,5,54,Company Website,Data Scientist,0
+CAND-168,27,Female,PhD,4,54,Company Website,Data Scientist,0
+CAND-169,33,Female,High School,5,63,Employee Referral,QA Engineer,0
+CAND-170,21,Female,Bachelor,3,37,Company Website,Data Scientist,0
+CAND-171,25,Male,Bachelor,0,49,Employee Referral,Software Engineer,0
+CAND-172,24,Male,Bachelor,0,64,LinkedIn,Software Engineer,0
+CAND-173,50,Non-binary,Master,15,68,LinkedIn,Software Engineer,1
+CAND-174,48,Male,Master,7,45,Employee Referral,HR Analyst,0
+CAND-175,47,Non-binary,Master,16,67,Company Website,Software Engineer,1
+CAND-176,38,Female,High School,8,67,Employee Referral,Software Engineer,0
+CAND-177,48,Male,Bachelor,3,55,LinkedIn,Software Engineer,0
+CAND-178,27,Female,Bachelor,6,49,LinkedIn,QA Engineer,0
+CAND-179,55,Male,High School,12,55,LinkedIn,Data Scientist,1
+CAND-180,40,Male,Bachelor,10,56,LinkedIn,Product Manager,0
+CAND-181,56,Male,Bachelor,14,68,LinkedIn,Data Scientist,1
+CAND-182,26,Male,High School,8,66,Company Website,Software Engineer,0
+CAND-183,39,Female,Bachelor,5,63,Company Website,QA Engineer,0
+CAND-184,47,Female,Master,7,63,Employee Referral,Software Engineer,0
+CAND-185,39,Female,High School,9,46,Company Website,Software Engineer,0
+CAND-186,37,Female,Bachelor,6,45,LinkedIn,Product Manager,0
+CAND-187,27,Male,Master,5,61,Employee Referral,Software Engineer,0
+CAND-188,35,Male,Master,11,53,LinkedIn,Software Engineer,0
+CAND-189,30,Male,Master,3,52,Employee Referral,QA Engineer,0
+CAND-190,32,Male,Bachelor,7,59,LinkedIn,Data Scientist,0
+CAND-191,46,Male,Master,6,49,Company Website,Software Engineer,0
+CAND-192,44,Male,Bachelor,6,47,Recruiter,Data Scientist,0
+CAND-193,44,Female,Bachelor,6,55,Company Website,QA Engineer,0
+CAND-194,34,Female,High School,4,54,Company Website,Software Engineer,0
+CAND-195,57,Male,Bachelor,15,75,Employee Referral,Software Engineer,1
+CAND-196,24,Male,Bachelor,2,55,LinkedIn,Product Manager,0
+CAND-197,34,Female,Bachelor,3,52,Employee Referral,Product Manager,0
+CAND-198,25,Male,Master,2,47,Recruiter,HR Analyst,0
+CAND-199,33,Male,Bachelor,1,41,Recruiter,Data Scientist,0
+CAND-200,57,Female,Bachelor,11,58,Company Website,Software Engineer,0
+CAND-201,34,Female,High School,9,60,LinkedIn,Data Scientist,0
+CAND-202,55,Male,Bachelor,9,62,Employee Referral,Product Manager,0
+CAND-203,39,Male,Bachelor,6,39,Company Website,Software Engineer,0
+CAND-204,47,Female,Bachelor,11,55,LinkedIn,Product Manager,0
+CAND-205,38,Male,Bachelor,12,73,LinkedIn,Software Engineer,1
+CAND-206,31,Female,Master,7,60,LinkedIn,QA Engineer,0
+CAND-207,50,Male,Master,10,52,Company Website,QA Engineer,0
+CAND-208,57,Female,Bachelor,12,82,LinkedIn,Data Scientist,1
+CAND-209,31,Male,Bachelor,2,50,LinkedIn,HR Analyst,0
+CAND-210,50,Female,Master,13,70,LinkedIn,HR Analyst,1
+CAND-211,30,Female,PhD,2,58,Recruiter,Software Engineer,0
+CAND-212,48,Male,Bachelor,14,63,LinkedIn,Data Scientist,1
+CAND-213,50,Female,Master,6,52,LinkedIn,Product Manager,1
+CAND-214,38,Female,Master,5,74,Company Website,Software Engineer,0
+CAND-215,49,Female,Master,7,67,LinkedIn,Data Scientist,0
+CAND-216,31,Male,Bachelor,6,62,Recruiter,Software Engineer,0
+CAND-217,24,Male,High School,2,52,Recruiter,HR Analyst,0
+CAND-218,24,Non-binary,High School,4,42,Company Website,Data Scientist,0
+CAND-219,37,Female,Bachelor,6,66,Company Website,QA Engineer,0
+CAND-220,55,Female,Bachelor,12,56,Company Website,Data Scientist,0
+CAND-221,25,Female,Bachelor,4,55,LinkedIn,Software Engineer,0
+CAND-222,38,Male,Bachelor,9,46,LinkedIn,QA Engineer,0
+CAND-223,47,Non-binary,Bachelor,10,44,LinkedIn,Software Engineer,0
+CAND-224,28,Male,Master,4,58,LinkedIn,Software Engineer,0
+CAND-225,48,Male,High School,10,51,Company Website,Data Scientist,0
+CAND-226,32,Female,Bachelor,9,43,LinkedIn,Product Manager,0
+CAND-227,51,Male,Master,10,67,LinkedIn,Data Scientist,0
+CAND-228,43,Male,Master,9,79,Company Website,Software Engineer,0
+CAND-229,41,Female,PhD,15,82,Company Website,Data Scientist,1
+CAND-230,27,Female,Master,6,56,LinkedIn,Software Engineer,0
+CAND-231,38,Female,Master,8,61,LinkedIn,Software Engineer,0
+CAND-232,53,Female,Bachelor,11,69,LinkedIn,Data Scientist,1
+CAND-233,21,Female,Bachelor,0,57,LinkedIn,Software Engineer,0
+CAND-234,49,Female,Bachelor,8,55,Employee Referral,Software Engineer,0
+CAND-235,39,Male,Bachelor,8,58,Recruiter,Product Manager,0
+CAND-236,48,Female,Master,11,67,Company Website,QA Engineer,0
+CAND-237,46,Female,Bachelor,11,66,Company Website,Software Engineer,0
+CAND-238,37,Male,Bachelor,8,57,Employee Referral,Data Scientist,1
+CAND-239,32,Male,Bachelor,7,56,Company Website,Software Engineer,0
+CAND-240,44,Male,High School,12,71,LinkedIn,HR Analyst,0
+CAND-241,26,Female,Bachelor,4,63,LinkedIn,Software Engineer,0
+CAND-242,43,Male,High School,6,56,Company Website,Software Engineer,0
+CAND-243,24,Female,Master,5,71,Company Website,Data Scientist,0
+CAND-244,45,Female,Bachelor,14,62,LinkedIn,Software Engineer,0
+CAND-245,44,Male,Master,7,72,LinkedIn,Software Engineer,1
+CAND-246,24,Male,Master,2,57,LinkedIn,Software Engineer,0
+CAND-247,49,Male,Bachelor,11,88,LinkedIn,Product Manager,0
+CAND-248,36,Male,High School,7,44,Company Website,Product Manager,0
+CAND-249,50,Male,Master,16,65,Employee Referral,Product Manager,1
+CAND-250,22,Female,Bachelor,3,55,Company Website,QA Engineer,0
+CAND-251,27,Female,Master,4,59,LinkedIn,Data Scientist,0
+CAND-252,39,Female,High School,8,71,LinkedIn,HR Analyst,0
+CAND-253,28,Female,Bachelor,3,46,Employee Referral,QA Engineer,0
+CAND-254,33,Male,Master,6,65,Company Website,QA Engineer,1
+CAND-255,46,Female,Bachelor,8,67,LinkedIn,QA Engineer,0
+CAND-256,26,Male,Bachelor,3,57,LinkedIn,Data Scientist,0
+CAND-257,46,Male,PhD,8,54,Employee Referral,Software Engineer,0
+CAND-258,24,Male,Bachelor,2,62,Employee Referral,Data Scientist,0
+CAND-259,27,Female,Bachelor,4,63,Employee Referral,Software Engineer,0
+CAND-260,43,Male,Bachelor,9,64,Company Website,Data Scientist,0
+CAND-261,51,Non-binary,Bachelor,10,62,Company Website,Software Engineer,0
+CAND-262,27,Male,Master,5,59,Company Website,Software Engineer,0
+CAND-263,32,Male,Master,1,51,LinkedIn,HR Analyst,0
+CAND-264,56,Male,Bachelor,4,58,Employee Referral,Product Manager,0
+CAND-265,58,Male,Master,9,62,Company Website,Product Manager,0
+CAND-266,43,Female,Bachelor,13,57,LinkedIn,Data Scientist,0
+CAND-267,37,Male,High School,9,48,Recruiter,Product Manager,0
+CAND-268,34,Female,Bachelor,7,51,Company Website,HR Analyst,0
+CAND-269,44,Male,PhD,5,60,LinkedIn,Product Manager,0
+CAND-270,43,Male,High School,6,52,LinkedIn,Product Manager,0
+CAND-271,32,Male,Bachelor,5,56,Employee Referral,Data Scientist,0
+CAND-272,21,Female,Bachelor,2,55,Recruiter,Data Scientist,0
+CAND-273,26,Female,Master,4,50,Company Website,Product Manager,0
+CAND-274,57,Male,High School,12,72,Recruiter,HR Analyst,0
+CAND-275,36,Female,Bachelor,8,56,Employee Referral,Data Scientist,0
+CAND-276,39,Female,Master,6,55,Employee Referral,Data Scientist,0
+CAND-277,38,Female,Bachelor,11,66,Employee Referral,Data Scientist,1
+CAND-278,50,Female,Bachelor,12,48,Company Website,Data Scientist,0
+CAND-279,23,Female,Bachelor,2,44,Employee Referral,HR Analyst,0
+CAND-280,24,Male,Bachelor,0,56,Company Website,Product Manager,0
+CAND-281,31,Female,Bachelor,4,39,Employee Referral,Data Scientist,0
+CAND-282,39,Female,Master,7,68,LinkedIn,Data Scientist,1
+CAND-283,46,Female,Bachelor,8,70,Employee Referral,Data Scientist,1
+CAND-284,39,Female,Master,5,54,Recruiter,Software Engineer,0
+CAND-285,37,Female,PhD,9,66,LinkedIn,Data Scientist,0
+CAND-286,56,Male,Bachelor,8,67,Recruiter,QA Engineer,0
+CAND-287,27,Female,Bachelor,5,51,Company Website,Product Manager,0
+CAND-288,42,Female,Master,5,64,LinkedIn,Software Engineer,0
+CAND-289,41,Female,Bachelor,6,50,LinkedIn,QA Engineer,0
+CAND-290,38,Female,Master,4,52,Employee Referral,Product Manager,0
+CAND-291,51,Female,Master,11,58,Company Website,Software Engineer,0
+CAND-292,31,Female,High School,4,53,LinkedIn,Product Manager,0
+CAND-293,57,Male,Bachelor,12,72,Company Website,Product Manager,1
+CAND-294,33,Female,Bachelor,5,53,LinkedIn,QA Engineer,0
+CAND-295,41,Male,Bachelor,7,47,Company Website,Software Engineer,0
+CAND-296,40,Male,Bachelor,3,43,Employee Referral,Software Engineer,0
+CAND-297,53,Female,Bachelor,12,66,Employee Referral,Data Scientist,0
+CAND-298,37,Female,Master,4,70,Employee Referral,Software Engineer,0
+CAND-299,31,Male,Master,4,59,Company Website,Data Scientist,1
+CAND-300,21,Male,Master,0,47,Recruiter,QA Engineer,0
+CAND-301,34,Female,Bachelor,7,63,LinkedIn,Software Engineer,0
+CAND-302,52,Female,Bachelor,10,59,LinkedIn,Data Scientist,0
+CAND-303,21,Female,Bachelor,0,45,LinkedIn,HR Analyst,0
+CAND-304,55,Male,High School,16,57,Company Website,Data Scientist,1
+CAND-305,41,Male,Master,7,71,Company Website,Data Scientist,1
+CAND-306,26,Female,Bachelor,4,35,Employee Referral,Product Manager,0
+CAND-307,32,Female,Bachelor,8,64,LinkedIn,Software Engineer,0
+CAND-308,42,Male,Master,5,53,LinkedIn,Software Engineer,0
+CAND-309,32,Female,Bachelor,5,51,Company Website,Product Manager,0
+CAND-310,25,Male,High School,4,64,Recruiter,Data Scientist,0
+CAND-311,46,Male,High School,10,52,LinkedIn,Software Engineer,0
+CAND-312,46,Female,Bachelor,9,54,LinkedIn,Software Engineer,0
+CAND-313,25,Female,Master,0,49,LinkedIn,QA Engineer,0
+CAND-314,31,Female,Bachelor,4,56,Company Website,Software Engineer,0
+CAND-315,30,Male,Master,2,49,LinkedIn,QA Engineer,0
+CAND-316,46,Female,Master,4,43,LinkedIn,Data Scientist,0
+CAND-317,48,Female,Master,4,49,Company Website,Product Manager,0
+CAND-318,48,Female,Bachelor,4,63,LinkedIn,Software Engineer,0
+CAND-319,56,Female,High School,15,64,Company Website,Software Engineer,1
+CAND-320,50,Male,Master,16,74,LinkedIn,Data Scientist,1
+CAND-321,33,Female,Bachelor,1,47,Recruiter,Product Manager,0
+CAND-322,25,Male,Bachelor,2,45,Company Website,Software Engineer,0
+CAND-323,44,Male,Master,6,71,LinkedIn,Data Scientist,1
+CAND-324,55,Male,High School,14,61,LinkedIn,Data Scientist,1
+CAND-325,58,Female,Master,14,64,Company Website,Software Engineer,1
+CAND-326,29,Male,Master,7,68,Employee Referral,Product Manager,0
+CAND-327,29,Male,Master,3,48,LinkedIn,Software Engineer,0
+CAND-328,22,Female,Bachelor,5,49,LinkedIn,Data Scientist,0
+CAND-329,26,Male,Master,0,51,LinkedIn,Software Engineer,0
+CAND-330,42,Male,Bachelor,8,58,Company Website,Data Scientist,0
+CAND-331,41,Female,Master,7,61,Recruiter,Data Scientist,0
+CAND-332,35,Male,Master,12,82,Company Website,Data Scientist,0
+CAND-333,32,Female,Master,5,59,LinkedIn,Data Scientist,0
+CAND-334,52,Male,Bachelor,8,39,Employee Referral,HR Analyst,0
+CAND-335,38,Non-binary,High School,0,48,Employee Referral,Data Scientist,0
+CAND-336,51,Female,Bachelor,5,55,LinkedIn,QA Engineer,0
+CAND-337,57,Male,Bachelor,11,62,LinkedIn,Software Engineer,0
+CAND-338,33,Female,Bachelor,3,54,LinkedIn,Data Scientist,0
+CAND-339,28,Male,Bachelor,1,49,Employee Referral,Software Engineer,0
+CAND-340,57,Male,Bachelor,12,63,Employee Referral,Data Scientist,0
+CAND-341,45,Female,Master,11,69,Employee Referral,Product Manager,1
+CAND-342,32,Female,Master,9,57,Employee Referral,QA Engineer,1
+CAND-343,44,Female,Bachelor,10,53,LinkedIn,Product Manager,0
+CAND-344,40,Female,Master,8,85,LinkedIn,Product Manager,0
+CAND-345,55,Female,Bachelor,10,55,LinkedIn,Software Engineer,0
+CAND-346,30,Female,Bachelor,5,55,Employee Referral,Software Engineer,0
+CAND-347,58,Female,Bachelor,11,50,Company Website,QA Engineer,0
+CAND-348,56,Female,Master,9,63,LinkedIn,Software Engineer,0
+CAND-349,27,Male,PhD,11,58,LinkedIn,Software Engineer,0
+CAND-350,27,Male,Master,5,53,Employee Referral,HR Analyst,0
+CAND-351,41,Male,Master,8,69,Employee Referral,HR Analyst,1
+CAND-352,22,Female,PhD,3,60,Employee Referral,Product Manager,0
+CAND-353,32,Male,Bachelor,10,65,LinkedIn,Data Scientist,1
+CAND-354,37,Male,Bachelor,10,46,Recruiter,QA Engineer,0
+CAND-355,57,Female,Bachelor,4,68,Employee Referral,Software Engineer,0
+CAND-356,58,Female,PhD,12,57,Employee Referral,Data Scientist,0
+CAND-357,26,Male,High School,3,61,Employee Referral,Data Scientist,0
+CAND-358,54,Female,Bachelor,9,67,Recruiter,HR Analyst,0
+CAND-359,24,Male,Master,0,55,Recruiter,HR Analyst,0
+CAND-360,49,Non-binary,Bachelor,10,54,Company Website,Product Manager,0
+CAND-361,53,Female,Master,13,68,Company Website,Software Engineer,1
+CAND-362,54,Female,Bachelor,15,63,Company Website,Data Scientist,1
+CAND-363,29,Non-binary,PhD,3,56,Employee Referral,Software Engineer,0
+CAND-364,54,Male,Master,19,72,Company Website,HR Analyst,0
+CAND-365,25,Female,Bachelor,8,42,LinkedIn,Software Engineer,0
+CAND-366,40,Male,Master,8,69,LinkedIn,Software Engineer,0
+CAND-367,38,Male,Bachelor,6,55,Recruiter,Product Manager,0
+CAND-368,33,Male,Bachelor,6,52,Recruiter,Data Scientist,0
+CAND-369,21,Male,Bachelor,5,50,Recruiter,QA Engineer,0
+CAND-370,50,Female,Master,13,70,Company Website,Software Engineer,0
+CAND-371,33,Female,High School,6,45,Employee Referral,QA Engineer,0
+CAND-372,46,Male,Bachelor,15,49,Employee Referral,Software Engineer,1
+CAND-373,36,Female,Master,4,59,LinkedIn,Software Engineer,0
+CAND-374,35,Male,Bachelor,8,62,LinkedIn,Data Scientist,0
+CAND-375,54,Male,Bachelor,8,56,Recruiter,Software Engineer,0
+CAND-376,24,Female,High School,4,41,LinkedIn,Product Manager,0
+CAND-377,48,Male,Bachelor,15,67,Company Website,Software Engineer,1
+CAND-378,49,Female,Master,11,53,Employee Referral,Software Engineer,0
+CAND-379,35,Male,High School,9,48,Employee Referral,QA Engineer,0
+CAND-380,30,Female,Bachelor,2,44,LinkedIn,Software Engineer,0
+CAND-381,21,Male,Master,2,60,Employee Referral,Product Manager,0
+CAND-382,56,Male,High School,10,55,LinkedIn,QA Engineer,0
+CAND-383,57,Female,Master,16,67,Employee Referral,Software Engineer,1
+CAND-384,30,Male,Bachelor,7,72,LinkedIn,QA Engineer,0
+CAND-385,22,Male,Master,2,56,Employee Referral,Software Engineer,0
+CAND-386,25,Male,Master,0,53,Employee Referral,Data Scientist,0
+CAND-387,23,Male,Master,0,48,LinkedIn,Software Engineer,0
+CAND-388,52,Non-binary,Bachelor,5,49,LinkedIn,QA Engineer,0
+CAND-389,54,Female,Bachelor,16,51,Employee Referral,Product Manager,1
+CAND-390,26,Male,Master,8,68,LinkedIn,Data Scientist,1
+CAND-391,49,Female,Bachelor,15,70,LinkedIn,HR Analyst,1
+CAND-392,27,Male,Bachelor,0,47,Company Website,Data Scientist,0
+CAND-393,34,Male,High School,10,56,Recruiter,HR Analyst,0
+CAND-394,43,Female,PhD,13,74,Company Website,Product Manager,1
+CAND-395,48,Female,Master,4,43,Company Website,HR Analyst,0
+CAND-396,54,Male,Bachelor,15,62,Recruiter,HR Analyst,1
+CAND-397,22,Female,Master,5,48,Company Website,HR Analyst,0
+CAND-398,28,Male,Bachelor,6,70,Company Website,Software Engineer,0
+CAND-399,31,Female,Bachelor,2,58,Company Website,QA Engineer,0
+CAND-400,32,Non-binary,Bachelor,8,40,LinkedIn,QA Engineer,0
+CAND-401,58,Female,Bachelor,13,52,LinkedIn,Product Manager,0
+CAND-402,50,Female,Bachelor,9,58,Employee Referral,Software Engineer,0
+CAND-403,33,Male,Master,9,58,LinkedIn,HR Analyst,0
+CAND-404,57,Male,Master,15,59,Employee Referral,Software Engineer,1
+CAND-405,39,Female,Bachelor,6,71,LinkedIn,Data Scientist,0
+CAND-406,40,Male,Bachelor,12,66,Company Website,Data Scientist,0
+CAND-407,37,Male,High School,9,60,LinkedIn,Software Engineer,0
+CAND-408,26,Male,PhD,7,55,Company Website,QA Engineer,0
+CAND-409,56,Female,Master,10,69,Employee Referral,Software Engineer,0
+CAND-410,21,Male,Master,5,54,LinkedIn,Product Manager,0
+CAND-411,27,Male,Bachelor,6,53,LinkedIn,QA Engineer,0
+CAND-412,29,Male,High School,5,56,LinkedIn,Data Scientist,0
+CAND-413,31,Male,Bachelor,5,41,Employee Referral,Product Manager,0
+CAND-414,26,Male,High School,2,60,LinkedIn,Software Engineer,0
+CAND-415,21,Female,High School,0,46,Employee Referral,QA Engineer,0
+CAND-416,46,Male,High School,9,66,LinkedIn,HR Analyst,0
+CAND-417,57,Male,PhD,16,63,LinkedIn,Software Engineer,1
+CAND-418,25,Male,High School,3,41,Employee Referral,Product Manager,0
+CAND-419,32,Female,High School,9,47,Company Website,Data Scientist,0
+CAND-420,40,Female,Master,7,61,LinkedIn,Data Scientist,0
+CAND-421,56,Male,Bachelor,16,69,Recruiter,Product Manager,1
+CAND-422,47,Female,Master,12,62,LinkedIn,Data Scientist,1
+CAND-423,50,Non-binary,Bachelor,9,51,LinkedIn,Product Manager,0
+CAND-424,43,Female,Master,10,53,Company Website,Software Engineer,1
+CAND-425,36,Male,Bachelor,6,55,Company Website,Data Scientist,0
+CAND-426,28,Male,Bachelor,7,53,Employee Referral,QA Engineer,0
+CAND-427,53,Female,Master,13,61,LinkedIn,Software Engineer,1
+CAND-428,51,Female,Bachelor,11,74,Recruiter,Product Manager,0
+CAND-429,21,Male,Bachelor,2,50,Company Website,Software Engineer,0
+CAND-430,48,Male,Bachelor,13,74,Recruiter,QA Engineer,0
+CAND-431,24,Female,High School,3,44,Employee Referral,Product Manager,0
+CAND-432,49,Male,Master,14,70,Recruiter,Data Scientist,1
+CAND-433,52,Male,Bachelor,9,59,Company Website,Software Engineer,0
+CAND-434,25,Male,High School,1,35,LinkedIn,Data Scientist,0
+CAND-435,37,Female,Bachelor,7,68,Company Website,HR Analyst,0
+CAND-436,25,Female,Master,0,49,Employee Referral,Data Scientist,0
+CAND-437,42,Female,Bachelor,5,60,Company Website,Data Scientist,0
+CAND-438,56,Female,Master,17,66,Employee Referral,QA Engineer,1
+CAND-439,24,Female,Master,3,53,LinkedIn,Data Scientist,0
+CAND-440,36,Male,High School,6,46,Employee Referral,Data Scientist,0
+CAND-441,57,Female,Master,19,84,LinkedIn,Data Scientist,1
+CAND-442,32,Male,Bachelor,5,57,Recruiter,Software Engineer,0
+CAND-443,26,Female,Bachelor,4,56,LinkedIn,Product Manager,0
+CAND-444,39,Female,Master,11,75,LinkedIn,QA Engineer,1
+CAND-445,40,Male,Master,8,70,Employee Referral,HR Analyst,0
+CAND-446,46,Male,Bachelor,7,63,Employee Referral,HR Analyst,0
+CAND-447,32,Female,Bachelor,5,43,Employee Referral,Data Scientist,0
+CAND-448,57,Female,Bachelor,4,47,Recruiter,Software Engineer,0
+CAND-449,40,Female,Bachelor,5,46,LinkedIn,Product Manager,0
+CAND-450,31,Male,Bachelor,10,66,Employee Referral,HR Analyst,0
+CAND-451,57,Male,Bachelor,16,69,LinkedIn,QA Engineer,0
+CAND-452,56,Female,Bachelor,9,48,Company Website,Data Scientist,0
+CAND-453,39,Female,High School,3,47,Company Website,Product Manager,0
+CAND-454,21,Male,Master,2,41,LinkedIn,QA Engineer,0
+CAND-455,43,Male,Bachelor,14,65,Company Website,HR Analyst,0
+CAND-456,42,Male,Master,7,46,Employee Referral,QA Engineer,0
+CAND-457,26,Male,High School,7,58,LinkedIn,Data Scientist,0
+CAND-458,45,Female,Bachelor,8,61,Recruiter,Software Engineer,0
+CAND-459,52,Female,Bachelor,9,75,Company Website,Data Scientist,1
+CAND-460,25,Female,High School,0,52,LinkedIn,Data Scientist,0
+CAND-461,48,Male,Bachelor,16,65,Company Website,HR Analyst,1
+CAND-462,26,Male,Bachelor,2,57,LinkedIn,Data Scientist,0
+CAND-463,49,Male,Master,10,52,LinkedIn,Data Scientist,0
+CAND-464,36,Non-binary,Bachelor,3,44,Employee Referral,Data Scientist,0
+CAND-465,21,Non-binary,Master,2,56,LinkedIn,Product Manager,0
+CAND-466,57,Male,Bachelor,11,44,LinkedIn,Data Scientist,0
+CAND-467,27,Female,Master,3,54,Employee Referral,Software Engineer,0
+CAND-468,43,Female,Bachelor,13,56,LinkedIn,QA Engineer,1
+CAND-469,27,Female,Bachelor,2,51,Employee Referral,Data Scientist,0
+CAND-470,56,Male,Bachelor,11,53,Employee Referral,Data Scientist,0
+CAND-471,49,Female,Master,14,71,LinkedIn,Software Engineer,1
+CAND-472,51,Male,Bachelor,16,68,Company Website,Product Manager,1
+CAND-473,37,Male,Bachelor,4,64,LinkedIn,Product Manager,0
+CAND-474,38,Male,Bachelor,8,58,Company Website,HR Analyst,0
+CAND-475,45,Female,Master,5,51,LinkedIn,Software Engineer,0
+CAND-476,50,Female,High School,10,56,Recruiter,HR Analyst,0
+CAND-477,53,Female,Bachelor,17,58,LinkedIn,Product Manager,1
+CAND-478,21,Male,Bachelor,0,51,Employee Referral,Software Engineer,0
+CAND-479,46,Male,Master,11,69,LinkedIn,Software Engineer,0
+CAND-480,25,Male,Bachelor,3,72,LinkedIn,Data Scientist,0
+CAND-481,31,Female,Bachelor,3,47,Company Website,QA Engineer,0
+CAND-482,52,Female,PhD,10,62,Company Website,Data Scientist,1
+CAND-483,30,Female,Bachelor,6,51,Recruiter,Data Scientist,0
+CAND-484,51,Male,Bachelor,7,58,LinkedIn,Product Manager,0
+CAND-485,38,Male,Bachelor,8,61,LinkedIn,QA Engineer,1
+CAND-486,29,Female,High School,4,50,LinkedIn,Product Manager,0
+CAND-487,33,Male,High School,1,55,Company Website,QA Engineer,0
+CAND-488,41,Female,Bachelor,8,53,Recruiter,Software Engineer,0
+CAND-489,50,Male,Master,16,78,Recruiter,QA Engineer,1
+CAND-490,44,Female,Master,13,71,Recruiter,Software Engineer,0
+CAND-491,56,Female,High School,10,57,LinkedIn,Software Engineer,0
+CAND-492,53,Male,Bachelor,12,60,Company Website,HR Analyst,0
+CAND-493,49,Female,High School,9,76,Employee Referral,Software Engineer,0
+CAND-494,43,Female,Master,12,59,LinkedIn,Software Engineer,0
+CAND-495,32,Female,High School,6,55,Employee Referral,Product Manager,0
+CAND-496,36,Female,Bachelor,10,54,LinkedIn,Data Scientist,0
+CAND-497,25,Male,Bachelor,4,67,LinkedIn,Software Engineer,0
+CAND-498,35,Male,Bachelor,5,61,Employee Referral,Product Manager,0
+CAND-499,56,Male,Bachelor,11,56,LinkedIn,QA Engineer,0
+CAND-500,37,Female,Master,0,55,Recruiter,QA Engineer,0
+CAND-501,25,Male,Bachelor,4,55,LinkedIn,Software Engineer,0
+CAND-502,45,Female,Master,11,60,LinkedIn,Product Manager,0
+CAND-503,57,Female,Bachelor,18,77,LinkedIn,QA Engineer,1
+CAND-504,53,Female,Master,4,59,LinkedIn,Software Engineer,0
+CAND-505,31,Male,Master,8,62,Company Website,Software Engineer,0
+CAND-506,38,Male,PhD,14,69,LinkedIn,Software Engineer,1
+CAND-507,41,Male,Bachelor,10,64,Company Website,Data Scientist,0
+CAND-508,30,Male,Bachelor,5,56,Employee Referral,Software Engineer,0
+CAND-509,31,Male,Bachelor,6,56,Company Website,QA Engineer,0
+CAND-510,29,Male,Bachelor,9,54,LinkedIn,HR Analyst,0
+CAND-511,58,Male,Bachelor,12,77,Company Website,Software Engineer,1
+CAND-512,49,Female,PhD,14,61,Employee Referral,Product Manager,1
+CAND-513,52,Female,PhD,5,62,Company Website,Software Engineer,0
+CAND-514,52,Female,Bachelor,8,55,LinkedIn,Software Engineer,0
+CAND-515,57,Male,Bachelor,8,72,Company Website,QA Engineer,0
+CAND-516,25,Male,Master,7,52,Company Website,Data Scientist,0
+CAND-517,54,Male,Master,16,65,LinkedIn,HR Analyst,0
+CAND-518,23,Female,Bachelor,4,45,LinkedIn,Data Scientist,0
+CAND-519,39,Male,Bachelor,8,61,Recruiter,Software Engineer,0
+CAND-520,43,Female,Master,18,62,LinkedIn,Data Scientist,1
+CAND-521,34,Female,Bachelor,3,48,LinkedIn,Software Engineer,0
+CAND-522,26,Female,Bachelor,2,35,LinkedIn,QA Engineer,0
+CAND-523,28,Female,PhD,0,54,Company Website,Product Manager,0
+CAND-524,52,Male,PhD,10,60,Company Website,Data Scientist,1
+CAND-525,33,Female,Master,9,50,LinkedIn,Data Scientist,1
+CAND-526,32,Male,Master,11,73,Company Website,Product Manager,0
+CAND-527,56,Male,Bachelor,10,50,Employee Referral,QA Engineer,0
+CAND-528,26,Female,Bachelor,7,63,LinkedIn,Software Engineer,0
+CAND-529,55,Male,Bachelor,10,55,Recruiter,Software Engineer,0
+CAND-530,55,Female,Bachelor,10,73,LinkedIn,Software Engineer,1
+CAND-531,43,Non-binary,Bachelor,2,56,LinkedIn,Data Scientist,0
+CAND-532,27,Male,Bachelor,7,49,Recruiter,Data Scientist,0
+CAND-533,26,Male,Bachelor,5,47,Employee Referral,Software Engineer,0
+CAND-534,31,Male,Master,4,60,LinkedIn,Data Scientist,0
+CAND-535,42,Female,Bachelor,8,56,Employee Referral,Data Scientist,0
+CAND-536,26,Male,Bachelor,2,49,Company Website,Software Engineer,0
+CAND-537,38,Female,High School,6,63,LinkedIn,HR Analyst,0
+CAND-538,25,Female,Bachelor,2,45,Employee Referral,Product Manager,0
+CAND-539,41,Female,Master,6,59,Employee Referral,Data Scientist,0
+CAND-540,21,Male,Bachelor,4,61,LinkedIn,Data Scientist,0
+CAND-541,47,Male,Bachelor,15,73,Company Website,Data Scientist,0
+CAND-542,23,Male,Master,0,49,Company Website,QA Engineer,0
+CAND-543,28,Male,Bachelor,5,52,LinkedIn,Product Manager,0
+CAND-544,27,Female,High School,4,36,Recruiter,Data Scientist,0
+CAND-545,52,Male,Bachelor,15,58,Company Website,HR Analyst,1
+CAND-546,23,Female,High School,1,49,Company Website,QA Engineer,0
+CAND-547,37,Male,Bachelor,5,53,Company Website,QA Engineer,0
+CAND-548,43,Female,Bachelor,10,61,Company Website,Software Engineer,0
+CAND-549,40,Non-binary,High School,8,63,LinkedIn,Software Engineer,0
+CAND-550,46,Female,High School,16,56,Recruiter,Product Manager,0
+CAND-551,51,Female,Bachelor,15,65,Company Website,Data Scientist,0
+CAND-552,35,Female,High School,4,52,Employee Referral,Product Manager,0
+CAND-553,52,Female,Master,10,57,Company Website,QA Engineer,0
+CAND-554,33,Female,High School,7,65,LinkedIn,Data Scientist,0
+CAND-555,58,Male,Bachelor,10,68,LinkedIn,Software Engineer,0
+CAND-556,40,Female,Bachelor,9,62,LinkedIn,Data Scientist,0
+CAND-557,48,Male,Bachelor,7,71,LinkedIn,Software Engineer,0
+CAND-558,54,Female,High School,14,51,Employee Referral,Product Manager,0
+CAND-559,51,Male,Master,8,60,Employee Referral,QA Engineer,0
+CAND-560,53,Male,Master,5,60,LinkedIn,Data Scientist,0
+CAND-561,41,Male,High School,4,43,LinkedIn,QA Engineer,0
+CAND-562,22,Male,High School,6,55,Employee Referral,Data Scientist,0
+CAND-563,39,Male,Master,9,53,LinkedIn,Product Manager,0
+CAND-564,27,Male,Bachelor,0,54,Recruiter,Software Engineer,0
+CAND-565,54,Female,High School,3,57,Company Website,QA Engineer,0
+CAND-566,29,Female,Bachelor,9,61,LinkedIn,Product Manager,0
+CAND-567,29,Male,Bachelor,3,37,LinkedIn,Software Engineer,0
+CAND-568,30,Male,Master,3,47,Recruiter,Product Manager,0
+CAND-569,45,Female,Bachelor,8,63,LinkedIn,QA Engineer,0
+CAND-570,42,Female,PhD,7,61,Employee Referral,Software Engineer,0
+CAND-571,57,Male,Bachelor,14,44,LinkedIn,QA Engineer,0
+CAND-572,36,Male,Bachelor,6,65,LinkedIn,HR Analyst,0
+CAND-573,31,Non-binary,Bachelor,7,58,Employee Referral,QA Engineer,0
+CAND-574,22,Male,Bachelor,2,44,LinkedIn,Data Scientist,0
+CAND-575,21,Male,Bachelor,5,62,LinkedIn,Product Manager,0
+CAND-576,35,Female,High School,8,50,Company Website,HR Analyst,0
+CAND-577,56,Male,Bachelor,14,60,Employee Referral,Product Manager,1
+CAND-578,40,Female,Master,8,63,LinkedIn,Software Engineer,1
+CAND-579,54,Male,High School,16,79,LinkedIn,Software Engineer,1
+CAND-580,24,Female,Bachelor,4,66,Recruiter,QA Engineer,0
+CAND-581,24,Male,Bachelor,2,53,Employee Referral,Data Scientist,0
+CAND-582,52,Male,Bachelor,15,70,Employee Referral,Software Engineer,1
+CAND-583,25,Male,Master,1,58,Employee Referral,Data Scientist,1
+CAND-584,22,Male,Master,2,43,Employee Referral,QA Engineer,0
+CAND-585,36,Female,Master,7,64,Company Website,Data Scientist,0
+CAND-586,56,Male,High School,15,58,LinkedIn,QA Engineer,0
+CAND-587,47,Female,Bachelor,10,63,Employee Referral,QA Engineer,0
+CAND-588,24,Female,Bachelor,3,50,Employee Referral,HR Analyst,0
+CAND-589,52,Female,Bachelor,9,63,Recruiter,HR Analyst,0
+CAND-590,53,Female,High School,3,50,Company Website,Software Engineer,0
+CAND-591,51,Female,Bachelor,13,40,LinkedIn,Product Manager,0
+CAND-592,55,Male,Bachelor,9,61,Company Website,Software Engineer,0
+CAND-593,30,Male,Bachelor,0,53,Company Website,HR Analyst,0
+CAND-594,58,Male,High School,10,61,Company Website,Software Engineer,0
+CAND-595,33,Female,Master,6,57,Employee Referral,Product Manager,0
+CAND-596,51,Female,Master,13,80,Company Website,QA Engineer,1
+CAND-597,43,Female,Bachelor,8,60,LinkedIn,Software Engineer,0
+CAND-598,50,Male,Master,2,57,Company Website,QA Engineer,0
+CAND-599,44,Male,High School,7,62,Company Website,Software Engineer,0
+CAND-600,45,Female,Master,13,70,Recruiter,Data Scientist,1
+CAND-601,44,Male,PhD,5,51,Company Website,Data Scientist,0
+CAND-602,50,Female,High School,11,39,Company Website,Data Scientist,0
+CAND-603,49,Female,Master,11,60,Company Website,Product Manager,0
+CAND-604,26,Female,PhD,3,62,Company Website,HR Analyst,0
+CAND-605,52,Female,Master,12,63,LinkedIn,Data Scientist,1
+CAND-606,41,Male,PhD,12,73,Recruiter,Product Manager,1
+CAND-607,33,Male,Bachelor,6,57,Recruiter,QA Engineer,0
+CAND-608,40,Female,High School,6,63,Company Website,QA Engineer,0
+CAND-609,57,Male,Master,13,64,Company Website,Software Engineer,1
+CAND-610,53,Male,Bachelor,12,67,LinkedIn,HR Analyst,1
+CAND-611,52,Male,Bachelor,7,61,Company Website,Software Engineer,0
+CAND-612,38,Male,Bachelor,8,70,Company Website,Product Manager,0
+CAND-613,50,Female,Bachelor,15,53,Employee Referral,Product Manager,0
+CAND-614,35,Male,High School,8,51,LinkedIn,QA Engineer,0
+CAND-615,47,Female,Master,11,71,Employee Referral,Software Engineer,1
+CAND-616,45,Non-binary,High School,6,65,LinkedIn,Software Engineer,0
+CAND-617,30,Female,Master,0,52,Employee Referral,QA Engineer,0
+CAND-618,31,Male,Master,2,51,Company Website,Software Engineer,0
+CAND-619,23,Female,Bachelor,6,62,LinkedIn,Data Scientist,0
+CAND-620,26,Female,Bachelor,1,56,Company Website,QA Engineer,0
+CAND-621,37,Male,Bachelor,5,51,Employee Referral,Product Manager,0
+CAND-622,39,Male,PhD,7,63,Company Website,Software Engineer,0
+CAND-623,27,Female,Master,0,60,LinkedIn,Data Scientist,0
+CAND-624,36,Male,Bachelor,2,66,Company Website,HR Analyst,0
+CAND-625,43,Male,High School,6,58,LinkedIn,Data Scientist,0
+CAND-626,29,Female,Bachelor,1,50,Company Website,Software Engineer,0
+CAND-627,33,Male,Bachelor,3,51,Company Website,Software Engineer,0
+CAND-628,34,Male,Master,3,59,LinkedIn,Data Scientist,0
+CAND-629,40,Male,Master,9,61,Company Website,HR Analyst,0
+CAND-630,34,Female,Bachelor,3,53,Employee Referral,Data Scientist,0
+CAND-631,49,Female,Master,7,51,Employee Referral,Software Engineer,0
+CAND-632,33,Male,Bachelor,5,65,LinkedIn,Data Scientist,0
+CAND-633,37,Male,Master,6,49,LinkedIn,Software Engineer,1
+CAND-634,35,Male,Bachelor,5,51,Company Website,Software Engineer,0
+CAND-635,27,Non-binary,Bachelor,5,55,LinkedIn,HR Analyst,0
+CAND-636,47,Male,Master,9,78,Company Website,Product Manager,0
+CAND-637,29,Male,Bachelor,3,48,LinkedIn,Software Engineer,0
+CAND-638,32,Male,Master,7,54,LinkedIn,Data Scientist,0
+CAND-639,51,Male,PhD,5,54,Employee Referral,Software Engineer,0
+CAND-640,57,Female,High School,6,66,LinkedIn,Software Engineer,0
+CAND-641,46,Female,High School,9,35,Employee Referral,Product Manager,0
+CAND-642,55,Male,Bachelor,18,62,LinkedIn,Data Scientist,1
+CAND-643,53,Female,Bachelor,14,87,Company Website,QA Engineer,1
+CAND-644,39,Female,High School,8,60,Company Website,HR Analyst,0
+CAND-645,50,Male,Bachelor,15,58,Employee Referral,Software Engineer,1
+CAND-646,33,Female,Master,6,58,Employee Referral,HR Analyst,0
+CAND-647,38,Female,Bachelor,12,64,Company Website,Data Scientist,0
+CAND-648,41,Male,Bachelor,8,65,Company Website,Software Engineer,0
+CAND-649,57,Male,Master,14,83,LinkedIn,QA Engineer,1
+CAND-650,53,Female,Bachelor,14,69,Company Website,Software Engineer,0
+CAND-651,39,Female,Master,7,55,LinkedIn,Product Manager,0
+CAND-652,45,Female,Bachelor,14,72,Company Website,QA Engineer,1
+CAND-653,28,Male,PhD,4,51,LinkedIn,Software Engineer,0
+CAND-654,51,Male,Bachelor,16,60,Recruiter,QA Engineer,1
+CAND-655,42,Female,High School,5,37,Company Website,Software Engineer,0
+CAND-656,41,Male,Master,10,50,Company Website,QA Engineer,0
+CAND-657,50,Female,Bachelor,22,68,Company Website,Software Engineer,1
+CAND-658,45,Female,High School,5,42,LinkedIn,Software Engineer,0
+CAND-659,23,Non-binary,High School,3,51,LinkedIn,Data Scientist,0
+CAND-660,31,Female,Master,4,46,Recruiter,QA Engineer,0
+CAND-661,27,Female,High School,3,35,Employee Referral,Software Engineer,0
+CAND-662,48,Female,Bachelor,11,53,LinkedIn,QA Engineer,0
+CAND-663,22,Male,High School,0,41,Employee Referral,Software Engineer,0
+CAND-664,28,Male,Bachelor,3,47,Company Website,Data Scientist,0
+CAND-665,43,Non-binary,Bachelor,4,65,LinkedIn,Data Scientist,0
+CAND-666,47,Female,Bachelor,5,49,Company Website,Software Engineer,0
+CAND-667,40,Female,Bachelor,2,58,LinkedIn,HR Analyst,0
+CAND-668,53,Male,High School,16,65,LinkedIn,Data Scientist,1
+CAND-669,55,Female,Bachelor,14,65,Employee Referral,Product Manager,1
+CAND-670,26,Male,Bachelor,3,45,LinkedIn,Product Manager,0
+CAND-671,57,Male,Bachelor,14,65,Recruiter,Data Scientist,0
+CAND-672,44,Female,High School,8,49,Employee Referral,Product Manager,0
+CAND-673,45,Male,High School,5,53,Employee Referral,HR Analyst,0
+CAND-674,24,Female,Bachelor,6,54,Company Website,Product Manager,0
+CAND-675,44,Female,Bachelor,5,47,Employee Referral,Data Scientist,0
+CAND-676,48,Male,Bachelor,9,67,Company Website,Product Manager,0
+CAND-677,43,Male,Master,9,65,Company Website,Product Manager,0
+CAND-678,24,Male,Bachelor,5,51,Company Website,Data Scientist,0
+CAND-679,40,Male,Bachelor,6,57,Recruiter,Product Manager,0
+CAND-680,56,Non-binary,Bachelor,13,64,LinkedIn,Data Scientist,0
+CAND-681,48,Non-binary,High School,10,51,Company Website,QA Engineer,0
+CAND-682,26,Male,Bachelor,0,49,Employee Referral,HR Analyst,0
+CAND-683,57,Female,Bachelor,14,61,Company Website,HR Analyst,0
+CAND-684,57,Male,Bachelor,12,55,Employee Referral,QA Engineer,0
+CAND-685,27,Non-binary,High School,3,36,Company Website,Product Manager,0
+CAND-686,51,Female,Master,12,63,LinkedIn,QA Engineer,1
+CAND-687,36,Male,Master,6,63,Company Website,Software Engineer,0
+CAND-688,43,Female,High School,7,48,Company Website,Data Scientist,0
+CAND-689,37,Female,Bachelor,5,74,LinkedIn,Software Engineer,0
+CAND-690,50,Male,Master,9,69,LinkedIn,Software Engineer,0
+CAND-691,58,Female,Bachelor,21,85,LinkedIn,HR Analyst,1
+CAND-692,51,Male,Master,9,68,Employee Referral,QA Engineer,0
+CAND-693,56,Male,Bachelor,18,85,Recruiter,Data Scientist,0
+CAND-694,56,Male,Master,11,58,Company Website,Software Engineer,0
+CAND-695,24,Female,PhD,1,35,LinkedIn,Product Manager,0
+CAND-696,30,Female,High School,1,43,Company Website,Data Scientist,0
+CAND-697,48,Male,Bachelor,10,65,Employee Referral,QA Engineer,0
+CAND-698,43,Male,Bachelor,12,64,Employee Referral,HR Analyst,1
+CAND-699,22,Male,High School,5,53,LinkedIn,Data Scientist,0
+CAND-700,24,Male,Bachelor,1,60,LinkedIn,Software Engineer,0
+CAND-701,40,Female,PhD,3,59,Recruiter,Software Engineer,0
+CAND-702,44,Male,High School,12,66,Employee Referral,Software Engineer,0
+CAND-703,27,Female,Bachelor,3,44,LinkedIn,Data Scientist,0
+CAND-704,27,Female,Master,0,42,Employee Referral,Software Engineer,0
+CAND-705,25,Male,Bachelor,4,66,LinkedIn,Software Engineer,0
+CAND-706,42,Female,Bachelor,2,51,LinkedIn,Software Engineer,0
+CAND-707,21,Female,PhD,0,47,Employee Referral,Software Engineer,0
+CAND-708,42,Female,Bachelor,8,53,Company Website,QA Engineer,0
+CAND-709,39,Female,High School,10,52,Company Website,Software Engineer,0
+CAND-710,38,Male,High School,6,47,Recruiter,QA Engineer,0
+CAND-711,46,Female,Master,11,54,Employee Referral,Software Engineer,0
+CAND-712,40,Male,Bachelor,10,48,LinkedIn,Software Engineer,0
+CAND-713,48,Male,Bachelor,11,60,Company Website,Software Engineer,0
+CAND-714,50,Female,High School,10,53,Employee Referral,Product Manager,0
+CAND-715,55,Female,Bachelor,8,67,Company Website,Software Engineer,1
+CAND-716,51,Male,Master,15,72,Recruiter,Data Scientist,1
+CAND-717,40,Male,Bachelor,6,58,Employee Referral,Software Engineer,0
+CAND-718,39,Male,PhD,8,56,LinkedIn,HR Analyst,0
+CAND-719,29,Male,Bachelor,1,48,LinkedIn,Software Engineer,0
+CAND-720,43,Female,Bachelor,6,58,Employee Referral,Data Scientist,0
+CAND-721,26,Female,Master,0,56,Recruiter,QA Engineer,0
+CAND-722,56,Male,Bachelor,11,61,LinkedIn,Software Engineer,0
+CAND-723,53,Female,Bachelor,10,69,LinkedIn,Software Engineer,0
+CAND-724,25,Male,Master,3,54,Employee Referral,QA Engineer,0
+CAND-725,50,Male,Bachelor,10,67,LinkedIn,Software Engineer,0
+CAND-726,25,Male,Bachelor,2,47,LinkedIn,Software Engineer,0
+CAND-727,48,Male,PhD,11,51,Recruiter,Data Scientist,0
+CAND-728,24,Female,Bachelor,4,55,Employee Referral,Software Engineer,0
+CAND-729,39,Female,Bachelor,11,68,Recruiter,HR Analyst,0
+CAND-730,45,Female,High School,5,56,Employee Referral,Product Manager,0
+CAND-731,48,Male,Bachelor,9,63,LinkedIn,Product Manager,0
+CAND-732,36,Female,Bachelor,6,53,Recruiter,Software Engineer,0
+CAND-733,56,Female,Master,8,54,LinkedIn,Product Manager,0
+CAND-734,50,Female,Bachelor,12,67,LinkedIn,Product Manager,0
+CAND-735,28,Female,Bachelor,4,56,Recruiter,Software Engineer,0
+CAND-736,46,Male,Bachelor,7,52,Employee Referral,HR Analyst,1
+CAND-737,48,Female,Bachelor,5,63,Recruiter,Product Manager,0
+CAND-738,33,Non-binary,Bachelor,5,47,LinkedIn,QA Engineer,0
+CAND-739,49,Female,Master,10,58,Recruiter,Software Engineer,0
+CAND-740,55,Male,Bachelor,11,75,Company Website,Software Engineer,1
+CAND-741,52,Female,Bachelor,14,72,Employee Referral,Product Manager,0
+CAND-742,49,Female,Master,13,64,Recruiter,QA Engineer,0
+CAND-743,45,Male,Bachelor,12,65,Company Website,Data Scientist,0
+CAND-744,31,Non-binary,Bachelor,4,54,Employee Referral,Software Engineer,0
+CAND-745,51,Male,Master,14,46,Company Website,QA Engineer,0
+CAND-746,34,Female,Bachelor,9,52,Employee Referral,Software Engineer,0
+CAND-747,41,Female,High School,9,56,Recruiter,Data Scientist,0
+CAND-748,32,Male,Bachelor,4,50,Employee Referral,Product Manager,0
+CAND-749,32,Female,High School,6,54,LinkedIn,Software Engineer,0
+CAND-750,26,Male,Bachelor,2,60,LinkedIn,Software Engineer,0
+CAND-751,57,Male,Master,18,70,Recruiter,Software Engineer,1
+CAND-752,26,Male,High School,4,42,Recruiter,HR Analyst,0
+CAND-753,24,Male,Master,3,57,Recruiter,Data Scientist,0
+CAND-754,56,Male,Master,12,63,LinkedIn,Product Manager,0
+CAND-755,42,Female,Bachelor,3,51,Company Website,HR Analyst,0
+CAND-756,37,Female,Master,13,64,Employee Referral,Product Manager,0
+CAND-757,49,Male,Master,11,82,Employee Referral,Data Scientist,1
+CAND-758,35,Male,PhD,2,37,LinkedIn,Data Scientist,0
+CAND-759,25,Female,Bachelor,6,52,Company Website,Data Scientist,0
+CAND-760,48,Female,High School,13,61,LinkedIn,Product Manager,1
+CAND-761,27,Male,Bachelor,5,48,Company Website,HR Analyst,0
+CAND-762,42,Male,Bachelor,10,68,LinkedIn,QA Engineer,0
+CAND-763,57,Male,High School,15,70,LinkedIn,Data Scientist,1
+CAND-764,56,Female,Bachelor,14,65,LinkedIn,Data Scientist,0
+CAND-765,34,Female,High School,1,44,Recruiter,HR Analyst,0
+CAND-766,50,Male,Master,12,65,Employee Referral,Software Engineer,1
+CAND-767,44,Female,Bachelor,13,63,Recruiter,QA Engineer,0
+CAND-768,39,Male,High School,10,57,Company Website,Software Engineer,0
+CAND-769,26,Male,High School,3,47,Company Website,Product Manager,0
+CAND-770,35,Female,Bachelor,0,50,LinkedIn,QA Engineer,0
+CAND-771,45,Female,Bachelor,8,64,Company Website,Data Scientist,0
+CAND-772,58,Female,High School,22,63,LinkedIn,Software Engineer,1
+CAND-773,21,Male,Bachelor,4,45,Employee Referral,QA Engineer,0
+CAND-774,48,Male,Bachelor,8,44,Employee Referral,Data Scientist,0
+CAND-775,53,Female,Bachelor,11,69,Employee Referral,Data Scientist,0
+CAND-776,57,Male,Bachelor,7,59,LinkedIn,Data Scientist,0
+CAND-777,37,Male,Bachelor,2,55,Company Website,Data Scientist,0
+CAND-778,25,Male,Bachelor,3,40,LinkedIn,Product Manager,0
+CAND-779,31,Male,High School,5,66,LinkedIn,Software Engineer,0
+CAND-780,53,Female,High School,6,48,Employee Referral,Data Scientist,0
+CAND-781,54,Female,Bachelor,12,64,Company Website,HR Analyst,0
+CAND-782,45,Male,Master,6,65,Employee Referral,Software Engineer,0
+CAND-783,25,Female,PhD,2,47,LinkedIn,Data Scientist,0
+CAND-784,25,Male,Master,4,51,Recruiter,Product Manager,0
+CAND-785,39,Female,Bachelor,7,58,Recruiter,HR Analyst,0
+CAND-786,43,Female,Bachelor,12,86,Company Website,Product Manager,1
+CAND-787,22,Female,Bachelor,0,50,Employee Referral,QA Engineer,0
+CAND-788,47,Female,Master,10,76,LinkedIn,Software Engineer,0
+CAND-789,41,Female,Master,2,63,Employee Referral,Data Scientist,0
+CAND-790,21,Female,Master,0,53,Employee Referral,HR Analyst,0
+CAND-791,24,Male,Master,4,48,Employee Referral,HR Analyst,0
+CAND-792,38,Female,Bachelor,13,73,Employee Referral,Product Manager,1
+CAND-793,48,Female,Master,13,55,Company Website,Data Scientist,0
+CAND-794,52,Female,Master,12,78,Employee Referral,Data Scientist,0
+CAND-795,37,Female,Bachelor,8,60,Employee Referral,Software Engineer,0
+CAND-796,32,Female,Master,4,35,LinkedIn,HR Analyst,0
+CAND-797,57,Male,High School,11,56,LinkedIn,QA Engineer,0
+CAND-798,38,Female,PhD,5,63,Employee Referral,Data Scientist,0
+CAND-799,32,Male,Master,3,52,Company Website,Software Engineer,0
+CAND-800,37,Male,High School,6,58,Company Website,Data Scientist,0
+CAND-801,21,Female,Bachelor,0,41,Recruiter,Software Engineer,0
+CAND-802,32,Female,High School,5,41,Employee Referral,QA Engineer,0
+CAND-803,40,Female,Master,5,56,Company Website,Product Manager,0
+CAND-804,55,Male,Master,16,71,Company Website,Software Engineer,1
+CAND-805,49,Female,Bachelor,10,58,Company Website,Product Manager,0
+CAND-806,50,Male,Master,14,78,Employee Referral,HR Analyst,1
+CAND-807,41,Male,High School,9,49,Company Website,Software Engineer,0
+CAND-808,25,Male,Bachelor,6,58,Company Website,Data Scientist,0
+CAND-809,35,Male,Bachelor,3,52,Employee Referral,Data Scientist,0
+CAND-810,58,Non-binary,High School,10,45,Employee Referral,Software Engineer,0
+CAND-811,22,Female,Bachelor,0,37,Employee Referral,Data Scientist,0
+CAND-812,54,Female,Bachelor,10,61,LinkedIn,Product Manager,0
+CAND-813,47,Female,Bachelor,7,73,Employee Referral,Software Engineer,0
+CAND-814,31,Male,Bachelor,4,58,Company Website,Software Engineer,0
+CAND-815,50,Male,Master,6,44,LinkedIn,QA Engineer,0
+CAND-816,52,Male,Bachelor,7,35,Employee Referral,Data Scientist,0
+CAND-817,22,Female,Master,0,56,Employee Referral,Product Manager,0
+CAND-818,25,Non-binary,Bachelor,0,47,Company Website,Product Manager,0
+CAND-819,46,Male,Bachelor,13,73,Employee Referral,QA Engineer,1
+CAND-820,58,Male,Bachelor,8,51,LinkedIn,QA Engineer,0
+CAND-821,21,Non-binary,Bachelor,0,51,LinkedIn,QA Engineer,0
+CAND-822,46,Female,Bachelor,17,76,LinkedIn,Product Manager,0
+CAND-823,26,Female,Bachelor,2,47,Company Website,Data Scientist,0
+CAND-824,45,Male,High School,11,55,Employee Referral,Data Scientist,0
+CAND-825,44,Female,Bachelor,13,64,Employee Referral,Data Scientist,1
+CAND-826,24,Female,Bachelor,5,59,Employee Referral,Data Scientist,0
+CAND-827,46,Female,Bachelor,4,53,LinkedIn,Software Engineer,0
+CAND-828,55,Female,Master,13,75,Company Website,Data Scientist,0
+CAND-829,53,Male,Bachelor,8,54,LinkedIn,Data Scientist,0
+CAND-830,22,Male,PhD,8,51,Employee Referral,Software Engineer,0
+CAND-831,30,Female,Master,0,66,LinkedIn,Software Engineer,0
+CAND-832,30,Female,PhD,1,48,Company Website,QA Engineer,0
+CAND-833,38,Female,Master,5,52,Employee Referral,Product Manager,0
+CAND-834,26,Male,High School,0,44,Employee Referral,QA Engineer,0
+CAND-835,53,Male,Bachelor,17,70,LinkedIn,Product Manager,1
+CAND-836,50,Male,High School,15,61,LinkedIn,QA Engineer,0
+CAND-837,51,Female,Master,7,59,Employee Referral,QA Engineer,0
+CAND-838,28,Female,Bachelor,1,49,Company Website,Software Engineer,0
+CAND-839,21,Female,Bachelor,0,49,LinkedIn,HR Analyst,0
+CAND-840,55,Male,Master,16,52,Employee Referral,Software Engineer,1
+CAND-841,31,Male,High School,5,66,Company Website,Product Manager,0
+CAND-842,45,Male,Bachelor,10,59,Company Website,QA Engineer,0
+CAND-843,55,Male,Master,16,75,LinkedIn,Data Scientist,1
+CAND-844,22,Female,High School,3,38,Company Website,Product Manager,0
+CAND-845,21,Female,Bachelor,3,48,LinkedIn,Data Scientist,0
+CAND-846,21,Female,Master,1,46,LinkedIn,Software Engineer,0
+CAND-847,26,Female,High School,0,57,Company Website,Software Engineer,0
+CAND-848,22,Female,Bachelor,4,48,Company Website,Software Engineer,0
+CAND-849,52,Male,Bachelor,9,65,Recruiter,Software Engineer,0
+CAND-850,44,Female,Bachelor,9,54,Recruiter,Product Manager,0
+CAND-851,58,Female,High School,20,66,LinkedIn,Data Scientist,0
+CAND-852,51,Male,Master,5,55,LinkedIn,Data Scientist,0
+CAND-853,57,Male,Master,14,78,Employee Referral,Product Manager,1
+CAND-854,30,Female,Bachelor,3,37,Recruiter,Software Engineer,0
+CAND-855,31,Male,Bachelor,3,41,Employee Referral,Software Engineer,0
+CAND-856,53,Male,Bachelor,15,51,LinkedIn,QA Engineer,0
+CAND-857,30,Male,Master,5,48,LinkedIn,HR Analyst,0
+CAND-858,23,Male,Bachelor,5,48,LinkedIn,Data Scientist,0
+CAND-859,46,Female,High School,8,42,Employee Referral,Software Engineer,0
+CAND-860,51,Male,High School,15,58,Company Website,QA Engineer,1
+CAND-861,57,Female,PhD,13,52,Company Website,HR Analyst,1
+CAND-862,56,Male,Bachelor,11,54,Company Website,Data Scientist,0
+CAND-863,25,Male,Master,3,64,LinkedIn,Software Engineer,0
+CAND-864,50,Female,Bachelor,16,71,Company Website,Software Engineer,1
+CAND-865,53,Female,Master,11,66,LinkedIn,Product Manager,0
+CAND-866,47,Male,High School,10,49,Company Website,HR Analyst,0
+CAND-867,52,Male,High School,6,40,Employee Referral,Product Manager,0
+CAND-868,52,Female,Master,14,59,Employee Referral,Data Scientist,1
+CAND-869,37,Male,Master,9,61,LinkedIn,Product Manager,0
+CAND-870,22,Male,Bachelor,2,57,Employee Referral,QA Engineer,0
+CAND-871,38,Male,Bachelor,8,65,Employee Referral,Data Scientist,0
+CAND-872,28,Male,Bachelor,0,53,LinkedIn,QA Engineer,0
+CAND-873,25,Female,Bachelor,3,46,LinkedIn,Data Scientist,0
+CAND-874,25,Male,Bachelor,3,52,Company Website,Data Scientist,0
+CAND-875,47,Female,Master,5,54,LinkedIn,Product Manager,0
+CAND-876,40,Male,Bachelor,12,61,LinkedIn,Data Scientist,1
+CAND-877,41,Female,Master,8,77,LinkedIn,HR Analyst,0
+CAND-878,49,Male,High School,6,38,LinkedIn,Data Scientist,0
+CAND-879,41,Female,High School,9,54,Company Website,Data Scientist,0
+CAND-880,44,Female,Bachelor,7,66,Company Website,Data Scientist,0
+CAND-881,24,Male,Bachelor,1,38,LinkedIn,Product Manager,0
+CAND-882,53,Male,Bachelor,18,65,Employee Referral,Data Scientist,1
+CAND-883,38,Male,High School,3,45,LinkedIn,QA Engineer,0
+CAND-884,26,Non-binary,Master,1,50,LinkedIn,Data Scientist,0
+CAND-885,51,Non-binary,Master,16,58,LinkedIn,Data Scientist,1
+CAND-886,48,Male,Master,15,74,Employee Referral,Product Manager,1
+CAND-887,23,Female,High School,4,55,Recruiter,Software Engineer,0
+CAND-888,28,Male,Bachelor,2,55,Company Website,Product Manager,0
+CAND-889,21,Male,Bachelor,1,42,LinkedIn,Data Scientist,0
+CAND-890,31,Female,Bachelor,2,51,LinkedIn,Data Scientist,0
+CAND-891,24,Female,Bachelor,0,41,LinkedIn,Product Manager,0
+CAND-892,47,Male,High School,4,47,Employee Referral,QA Engineer,0
+CAND-893,40,Male,Bachelor,9,76,LinkedIn,QA Engineer,0
+CAND-894,58,Male,Bachelor,5,55,Recruiter,Data Scientist,0
+CAND-895,49,Non-binary,Bachelor,9,50,Company Website,Data Scientist,0
+CAND-896,44,Male,Bachelor,10,62,Company Website,Product Manager,0
+CAND-897,40,Female,Bachelor,9,48,Employee Referral,Product Manager,0
+CAND-898,23,Female,Bachelor,7,47,LinkedIn,Product Manager,0
+CAND-899,23,Female,Bachelor,1,41,Employee Referral,Product Manager,0
+CAND-900,44,Female,Bachelor,7,53,LinkedIn,QA Engineer,0

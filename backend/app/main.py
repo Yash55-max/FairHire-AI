@@ -16,6 +16,7 @@ from .auth import AuthenticatedUser, decode_token, hash_password, issue_token, v
 from .jobs import JobManager
 from .pdf_export import build_report_pdf
 from .validation import validate_upload
+from .debiasing import DebiasEngine
 from .schemas import (
     AuthLoginRequest,
     AuthRegisterRequest,
@@ -253,6 +254,86 @@ def _train_job(payload: TrainRequest) -> dict[str, object]:
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
+    diagnostics = list(artifacts.metrics.get("diagnostics", []))
+    fairness_summary: dict[str, object] | None = None
+
+    sensitive_column = (payload.sensitive_column or "").strip() if payload.sensitive_column else None
+    if payload.include_fairness_proof and sensitive_column:
+        baseline_input = artifacts.test_frame.drop(columns=[payload.target_column], errors="ignore")
+        baseline_input[payload.target_column] = artifacts.y_true
+        if sensitive_column in baseline_input.columns and compute_bias is not None:
+            try:
+                baseline_bias = compute_bias(
+                    test_frame=baseline_input,
+                    y_true=artifacts.y_true,
+                    y_pred=artifacts.y_pred,
+                    sensitive_column=sensitive_column,
+                )
+
+                engine = DebiasEngine(frame, payload.target_column)
+                mitigated_frame, masked_columns = engine.auto_mask()
+                after_bias: dict[str, object] | None = None
+
+                if mitigated_frame.shape[1] > 1 and sensitive_column in frame.columns:
+                    mitigated_artifacts = train_pipeline(
+                        frame=mitigated_frame,
+                        target_column=payload.target_column,
+                        model_type=payload.model_type,
+                        test_size=payload.test_size,
+                        random_state=payload.random_state,
+                    )
+                    mitigated_input = mitigated_artifacts.test_frame.drop(columns=[payload.target_column], errors="ignore")
+                    mitigated_input[payload.target_column] = mitigated_artifacts.y_true
+
+                    if sensitive_column in mitigated_input.columns:
+                        after_bias = compute_bias(
+                            test_frame=mitigated_input,
+                            y_true=mitigated_artifacts.y_true,
+                            y_pred=mitigated_artifacts.y_pred,
+                            sensitive_column=sensitive_column,
+                        )
+
+                before_block = {
+                    "fairness_index": float(baseline_bias["fairness_index"]),
+                    "demographic_parity_difference": float(baseline_bias["demographic_parity_difference"]),
+                    "equal_opportunity_difference": float(baseline_bias["equal_opportunity_difference"]),
+                    "selection_rate_by_group": baseline_bias["selection_rate_by_group"],
+                }
+                after_block = None
+                delta_fairness = None
+                delta_dpd = None
+                if after_bias is not None:
+                    after_block = {
+                        "fairness_index": float(after_bias["fairness_index"]),
+                        "demographic_parity_difference": float(after_bias["demographic_parity_difference"]),
+                        "equal_opportunity_difference": float(after_bias["equal_opportunity_difference"]),
+                        "selection_rate_by_group": after_bias["selection_rate_by_group"],
+                    }
+                    delta_fairness = float(after_block["fairness_index"] - before_block["fairness_index"])
+                    delta_dpd = float(before_block["demographic_parity_difference"] - after_block["demographic_parity_difference"])
+                    if delta_fairness >= 0:
+                        diagnostics.append("Fairness mitigation improved fairness index while preserving model utility.")
+                    else:
+                        diagnostics.append("Fairness mitigation did not improve fairness index; review masking strategy and sensitive attributes.")
+                else:
+                    diagnostics.append("Fairness baseline computed, but mitigation-after metrics were not available for the selected sensitive column.")
+
+                fairness_summary = {
+                    "sensitive_column": sensitive_column,
+                    "before": before_block,
+                    "after": after_block,
+                    "delta_fairness_index": delta_fairness,
+                    "delta_demographic_parity_difference": delta_dpd,
+                    "mitigated_columns": masked_columns,
+                }
+            except Exception as exc:  # noqa: BLE001
+                diagnostics.append(f"Fairness proof generation skipped: {exc}")
+        else:
+            diagnostics.append(f"Sensitive column '{sensitive_column}' not found in test frame; fairness proof not computed.")
+
+    artifacts.metrics["diagnostics"] = diagnostics
+    artifacts.metrics["fairness"] = fairness_summary
+
     run_id = f"run_{uuid4().hex[:10]}"
     run = TrainingRun(
         run_id=run_id,
@@ -282,6 +363,16 @@ def _train_job(payload: TrainRequest) -> dict[str, object]:
         f1_score=artifacts.metrics["f1_score"],
         confusion_matrix=artifacts.metrics["confusion_matrix"],
         prediction_preview=preview,
+        feature_count=int(artifacts.metrics.get("feature_count", 0)),
+        train_rows=int(artifacts.metrics.get("train_rows", 0)),
+        test_rows=int(artifacts.metrics.get("test_rows", 0)),
+        cv_best_score=artifacts.metrics.get("cv_best_score"),
+        cv_score_std=artifacts.metrics.get("cv_score_std"),
+        cv_folds=artifacts.metrics.get("cv_folds"),
+        leakage_dropped_columns=list(artifacts.metrics.get("leakage_dropped_columns", [])),
+        validation_notes=list(artifacts.metrics.get("validation_notes", [])),
+        diagnostics=diagnostics,
+        fairness=fairness_summary,
     )
     _persist_run_summary(run)
     return response.model_dump()
@@ -545,4 +636,14 @@ def train_metrics(run_id: str) -> TrainResponse:
         f1_score=run.metrics["f1_score"],
         confusion_matrix=run.metrics["confusion_matrix"],
         prediction_preview=preview,
+        feature_count=int(run.metrics.get("feature_count", 0)),
+        train_rows=int(run.metrics.get("train_rows", 0)),
+        test_rows=int(run.metrics.get("test_rows", 0)),
+        cv_best_score=run.metrics.get("cv_best_score"),
+        cv_score_std=run.metrics.get("cv_score_std"),
+        cv_folds=run.metrics.get("cv_folds"),
+        leakage_dropped_columns=list(run.metrics.get("leakage_dropped_columns", [])),
+        validation_notes=list(run.metrics.get("validation_notes", [])),
+        diagnostics=list(run.metrics.get("diagnostics", run.metrics.get("validation_notes", []))),
+        fairness=run.metrics.get("fairness"),
     )

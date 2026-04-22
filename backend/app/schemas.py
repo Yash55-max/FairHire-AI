@@ -29,11 +29,13 @@ class TrainRequest(BaseModel):
     target_column: str
     model_type: Literal[
         "logistic_regression", "random_forest",
-        "gradient_boosting", "decision_tree",
+        "gradient_boosting", "decision_tree", "xgboost",
     ] = "random_forest"
     test_size: float = Field(default=0.2, ge=0.1, le=0.4)
     random_state: int = 42
     async_job: bool = True
+    sensitive_column: str | None = "gender"
+    include_fairness_proof: bool = True
 
 
 class AuthRegisterRequest(BaseModel):
@@ -98,6 +100,13 @@ class TrainResponse(BaseModel):
     feature_count: int = 0
     train_rows: int = 0
     test_rows: int = 0
+    cv_best_score: float | None = None
+    cv_score_std: float | None = None
+    cv_folds: int | None = None
+    leakage_dropped_columns: list[str] = Field(default_factory=list)
+    validation_notes: list[str] = Field(default_factory=list)
+    diagnostics: list[str] = Field(default_factory=list)
+    fairness: dict[str, Any] | None = None
 
 
 # ════════════════════════════════════════════════════════════════════

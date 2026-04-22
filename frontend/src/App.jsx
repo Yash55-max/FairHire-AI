@@ -34,7 +34,9 @@ const ROUTES = new Set([
 const PROTECTED_ROUTES = new Set(['dashboard', 'upload', 'model-analysis', 'bias-report', 'explainability', 'reports', 'settings'])
 const SESSION_KEY = 'fairhire_session'
 const THEME_KEY = 'fairhire_theme_mode'
-const API_BASE = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+const IS_LOCAL_HOST = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname)
+const API_BASE = (import.meta.env.VITE_API_URL || (IS_LOCAL_HOST ? 'http://127.0.0.1:8000' : '')).replace(/\/$/, '')
+const API_CONFIG_ERROR = 'Backend API is not configured for production. Set VITE_API_URL to your deployed backend URL and redeploy the frontend.'
 const ROUTE_META = {
   dashboard: ['Workspace', 'Dashboard'],
   upload: ['Workspace', 'Upload Dataset'],
@@ -417,17 +419,35 @@ function SymbolFieldStrip({ items }) {
 }
 
 async function callApi(path, options = {}) {
+  if (!API_BASE) {
+    throw new Error(API_CONFIG_ERROR)
+  }
+
   const { token, headers = {}, ...requestOptions } = options
   const requestHeaders = { ...headers }
   if (token) {
     requestHeaders.Authorization = `Bearer ${token}`
   }
 
-  const response = await fetch(`${API_BASE}${path}`, {
-    ...requestOptions,
-    headers: requestHeaders,
-  })
-  const payload = await response.json().catch(() => ({}))
+  let response
+  try {
+    response = await fetch(`${API_BASE}${path}`, {
+      ...requestOptions,
+      headers: requestHeaders,
+    })
+  } catch (error) {
+    throw new Error(`Cannot reach backend API at ${API_BASE}. ${IS_LOCAL_HOST ? 'Make sure FastAPI is running on port 8000.' : 'Deploy backend and set VITE_API_URL.'}`)
+  }
+
+  const contentType = response.headers.get('content-type') || ''
+  const payload = contentType.includes('application/json')
+    ? await response.json().catch(() => ({}))
+    : {}
+
+  if (!contentType.includes('application/json')) {
+    throw new Error(`Backend response was not JSON. Verify VITE_API_URL points to the API service, not the static frontend host.`)
+  }
+
   if (!response.ok) {
     throw new Error(payload.detail || 'Request failed')
   }
@@ -1569,6 +1589,8 @@ export default function App() {
       pushToast('success', 'Signed in', `Welcome back, ${authPayload.user.name}.`)
       navigate('dashboard')
       setRoute('dashboard')
+    } catch (error) {
+      pushToast('error', 'Sign in failed', error.message || 'Unable to sign in right now.')
     } finally {
       setLoading((prev) => ({ ...prev, auth: false }))
     }
