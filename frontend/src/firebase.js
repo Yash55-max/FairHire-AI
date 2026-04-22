@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore'
 
 // FairHire AI Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyDj35QsdA4aB0T38HuOHWE2TJ6eiVK61Vg',
+  apiKey: '',
   authDomain: 'fairhire-67f38.firebaseapp.com',
   projectId: 'fairhire-67f38',
   storageBucket: 'fairhire-67f38.firebasestorage.app',
