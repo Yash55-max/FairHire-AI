@@ -1554,7 +1554,7 @@ a { color: inherit; }
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 768px) {
   .app-shell,
   .login-page,
   .hero-slab,
