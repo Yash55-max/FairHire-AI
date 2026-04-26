@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore'
 
 // FairHire AI Firebase configuration
 const firebaseConfig = {
-  apiKey: '',
+  apiKey: 'AIzaSyDj35QsdA4aB0T38HuOHWE2TJ6eiVK61Vg',
   authDomain: 'fairhire-67f38.firebaseapp.com',
   projectId: 'fairhire-67f38',
   storageBucket: 'fairhire-67f38.firebasestorage.app',
@@ -21,7 +21,7 @@ const analyticsPromise =
   typeof window === 'undefined'
     ? Promise.resolve(null)
     : isSupported()
-        .then((supported) => (supported ? getAnalytics(app) : null))
-        .catch(() => null)
+      .then((supported) => (supported ? getAnalytics(app) : null))
+      .catch(() => null)
 
 export { app, db, analyticsPromise }

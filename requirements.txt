@@ -4,12 +4,13 @@ uvicorn[standard]>=0.29.0,<1.0.0
 python-multipart>=0.0.9
 
 # ── Data ─────────────────────────────────────────────────────────────────────
-pandas>=2.0.0
-numpy>=1.26.0
+pandas>=2.3.3
+numpy>=2.1.0
+scipy>=1.16.1
 openpyxl>=3.1.0          # XLSX support
 
 # ── ML ───────────────────────────────────────────────────────────────────────
-scikit-learn>=1.4.0
+scikit-learn>=1.6.0
 shap>=0.45.0
 xgboost>=2.1.0
 
@@ -18,4 +19,5 @@ fairlearn>=0.10.0
 
 # ── Utilities ────────────────────────────────────────────────────────────────
 python-dotenv>=1.0.0      # .env loading
-scipy>=1.12.0             # statistical tests in ethical validator
+google-generativeai>=0.4.0 # Gemini integration
+google-cloud-firestore

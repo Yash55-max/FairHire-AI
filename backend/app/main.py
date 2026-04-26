@@ -11,12 +11,16 @@ from typing import Any
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from .auth import AuthenticatedUser, decode_token, hash_password, issue_token, verify_password
 from .jobs import JobManager
 from .pdf_export import build_report_pdf
 from .validation import validate_upload
 from .debiasing import DebiasEngine
+from .persistence import persistence
 from .schemas import (
     AuthLoginRequest,
     AuthRegisterRequest,
@@ -40,6 +44,7 @@ except ImportError:  # pragma: no cover - runtime fallback for Python 3.14 envir
 
 try:
     from .ml_pipeline import compute_bias, compute_explainability, suggest_target_columns, train_pipeline
+    from .assistant import chat
     ML_AVAILABLE = True
 except Exception as exc:  # noqa: BLE001
     compute_bias = None
@@ -95,14 +100,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("ALLOWED_ORIGINS", "*").split(","),
+    allow_origins=[o.strip() for o in os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-def _persist_run_summary(run: TrainingRun, bias_payload: dict | None = None, explain_payload: dict | None = None) -> None:
+def _persist_run_summary(run: TrainingRun, email: str = "anonymous", bias_payload: dict | None = None, explain_payload: dict | None = None) -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     records: list[dict] = []
     if RUNS_JSON.exists():
@@ -111,6 +116,7 @@ def _persist_run_summary(run: TrainingRun, bias_payload: dict | None = None, exp
 
     record = {
         "run_id": run.run_id,
+        "user_email": email,
         "dataset_id": run.dataset_id,
         "model_type": run.model_type,
         "target_column": run.target_column,
@@ -123,6 +129,14 @@ def _persist_run_summary(run: TrainingRun, bias_payload: dict | None = None, exp
 
     with RUNS_JSON.open("w", encoding="utf-8") as f:
         json.dump(records, f, indent=2)
+    
+    # Also save to Firestore for history tracking
+    persistence.save_analysis(
+        run_id=run.run_id,
+        email=email,
+        metrics=run.metrics,
+        bias_data=bias_payload
+    )
 
 
 def _read_uploaded_file(upload: UploadFile, content: bytes) -> Any:
@@ -544,7 +558,7 @@ def _train_job(payload: TrainRequest) -> dict[str, object]:
         diagnostics=diagnostics,
         fairness=fairness_summary,
     )
-    _persist_run_summary(run)
+    _persist_run_summary(run, email=payload.user_email)
     return response.model_dump()
 
 
@@ -601,6 +615,13 @@ def register_user(payload: AuthRegisterRequest) -> AuthResponse:
     return AuthResponse(token=issue_token(email), user=_serialize_user(user))
 
 
+@app.get("/auth/exists")
+def check_user_exists(email: str) -> dict[str, bool]:
+    email = email.strip().lower()
+    user_record = store.get_user(email)
+    return {"exists": bool(user_record)}
+
+
 @app.post("/auth/login", response_model=AuthResponse)
 def login_user(payload: AuthLoginRequest) -> AuthResponse:
     email = payload.email.strip().lower()
@@ -637,7 +658,7 @@ def get_job_status(job_id: str) -> JobStatusResponse:
 
 
 @app.get("/report/pdf")
-def download_report_pdf(run_id: str, sensitive_column: str = "gender", sample_size: int = 40) -> Response:
+def download_report_pdf(run_id: str, sensitive_column: str = "gender", sample_size: int = 40, user: AuthenticatedUser = Depends(_current_user)) -> Response:
     report = _build_report(run_id, sensitive_column, sample_size)
     try:
         pdf_bytes = build_report_pdf(report.model_dump())
@@ -687,7 +708,7 @@ def mobile_page(page: str) -> FileResponse:
 
 
 @app.post("/upload", response_model=UploadResponse)
-async def upload_dataset(file: UploadFile = File(...), target_column: str | None = Form(default=None)) -> UploadResponse:
+async def upload_dataset(file: UploadFile = File(...), target_column: str | None = Form(default=None), user: AuthenticatedUser = Depends(_current_user)) -> UploadResponse:
     if pd is None:
         raise HTTPException(
             status_code=503,
@@ -712,6 +733,13 @@ async def upload_dataset(file: UploadFile = File(...), target_column: str | None
     if target_column and target_column in frame.columns and target_column not in suggestions:
         suggestions = [target_column] + suggestions
 
+    role_columns = [column for column in ("role_applied", "job_role", "position", "role") if column in frame.columns]
+    role_suggestions = []
+    if role_columns:
+        role_column = role_columns[0]
+        # Get up to 100 unique values, sorted, skipping nulls
+        role_suggestions = sorted(frame[role_column].dropna().astype(str).unique().tolist())[:100]
+
     preview = frame.head(8).fillna("").to_dict(orient="records")
     return UploadResponse(
         dataset_id=dataset_id,
@@ -719,12 +747,15 @@ async def upload_dataset(file: UploadFile = File(...), target_column: str | None
         rows=int(frame.shape[0]),
         columns=list(frame.columns),
         target_suggestions=suggestions,
+        role_suggestions=role_suggestions,
         preview=preview,
     )
 
 
 @app.post("/train", response_model=JobSubmissionResponse)
-def train_model(payload: TrainRequest) -> JobSubmissionResponse:
+def train_model(payload: TrainRequest, user: AuthenticatedUser = Depends(_current_user)) -> JobSubmissionResponse:
+    # Inject user email into payload for the background job
+    payload.user_email = user.email
     if payload.async_job:
         job = jobs.submit("train", _train_job, payload)
         return JobSubmissionResponse(job_id=job.job_id, kind=job.kind, status=job.status, message="Training queued")
@@ -734,7 +765,7 @@ def train_model(payload: TrainRequest) -> JobSubmissionResponse:
 
 
 @app.get("/bias", response_model=BiasResponse)
-def bias_metrics(run_id: str, sensitive_column: str = "gender") -> BiasResponse:
+def bias_metrics(run_id: str, sensitive_column: str = "gender", user: AuthenticatedUser = Depends(_current_user)) -> BiasResponse:
     if not ML_AVAILABLE or compute_bias is None:
         raise HTTPException(status_code=503, detail=ML_UNAVAILABLE_DETAIL)
 
@@ -762,12 +793,12 @@ def bias_metrics(run_id: str, sensitive_column: str = "gender") -> BiasResponse:
         true_positive_rate_by_group=bias["true_positive_rate_by_group"],
         fairness_index=bias["fairness_index"],
     )
-    _persist_run_summary(run, bias_payload=payload.model_dump())
+    _persist_run_summary(run, email=user.email, bias_payload=payload.model_dump())
     return payload
 
 
 @app.get("/explain", response_model=JobSubmissionResponse)
-def explain_metrics(run_id: str, sample_size: int = 40, async_job: bool = True) -> JobSubmissionResponse:
+def explain_metrics(run_id: str, sample_size: int = 40, async_job: bool = True, user: AuthenticatedUser = Depends(_current_user)) -> JobSubmissionResponse:
     if async_job:
         job = jobs.submit("explain", _explain_job, run_id, sample_size)
         return JobSubmissionResponse(job_id=job.job_id, kind=job.kind, status=job.status, message="Explainability queued")
@@ -777,15 +808,30 @@ def explain_metrics(run_id: str, sample_size: int = 40, async_job: bool = True) 
 
 
 @app.get("/report", response_model=ReportResponse)
-def report(run_id: str, sensitive_column: str = "gender", sample_size: int = 40) -> ReportResponse:
+def report(run_id: str, sensitive_column: str = "gender", sample_size: int = 40, user: AuthenticatedUser = Depends(_current_user)) -> ReportResponse:
     if not ML_AVAILABLE:
         raise HTTPException(status_code=503, detail=ML_UNAVAILABLE_DETAIL)
 
     return _build_report(run_id, sensitive_column, sample_size)
 
 
+@app.post("/assistant")
+def assistant_chat(payload: dict[str, Any], user: AuthenticatedUser = Depends(_current_user)) -> dict[str, Any]:
+    question = payload.get("question", "")
+    context = payload.get("context", {})
+    # Inject some system context if not provided
+    if not context.get("user_name"):
+        context["user_name"] = user.name
+    return chat(question, context)
+
+
+@app.get("/history")
+def get_analysis_history(user: AuthenticatedUser = Depends(_current_user)) -> list[dict[str, Any]]:
+    return persistence.get_history(email=user.email)
+
+
 @app.get("/train/{run_id}", response_model=TrainResponse)
-def train_metrics(run_id: str) -> TrainResponse:
+def train_metrics(run_id: str, user: AuthenticatedUser = Depends(_current_user)) -> TrainResponse:
     try:
         run = store.get_run(run_id)
     except KeyError as exc:

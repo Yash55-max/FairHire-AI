@@ -16,6 +16,7 @@ class UploadResponse(BaseModel):
     columns: list[str]
     target_suggestions: list[str]
     preview: list[dict[str, Any]]
+    role_suggestions: list[str] = Field(default_factory=list)
     schema: dict[str, str] = Field(default_factory=dict)
     null_counts: dict[str, int] = Field(default_factory=dict)
 
@@ -37,6 +38,7 @@ class TrainRequest(BaseModel):
     async_job: bool = True
     sensitive_column: str | None = "gender"
     include_fairness_proof: bool = True
+    user_email: str = "anonymous"
 
 
 class AuthRegisterRequest(BaseModel):
