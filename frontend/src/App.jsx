@@ -2288,7 +2288,6 @@ function useToasts() {
   return {
     toasts,
     pushToast,
-    clearToasts: () => setToasts([]),
     dismissToast: (id) => setToasts((current) => current.filter((toast) => toast.id !== id)),
   }
 }
@@ -2379,11 +2378,10 @@ export default function App() {
     history: false,
   })
 
-  const { toasts, pushToast, dismissToast, clearToasts } = useToasts()
+  const { toasts, pushToast, dismissToast } = useToasts()
 
   const isAuthenticated = Boolean(session?.token)
   const runId = trainData?.run_id || null
-  const isTrainingActive = loading.train || trainingProgress.active
   const effectiveTheme = themeMode === 'device' ? (systemPrefersDark ? 'dark' : 'light') : themeMode
   const userProfile = useMemo(() => {
     const email = session?.user?.email
@@ -2676,7 +2674,6 @@ export default function App() {
     }
 
     setLoading((prev) => ({ ...prev, train: true }))
-    clearToasts()
     setTrainingProgress({
       active: true,
       percent: 8,
@@ -2925,7 +2922,7 @@ export default function App() {
       <div className={`route-stage ${routeStageClass}`}>
         {wrappedPage}
       </div>
-      {!isTrainingActive ? <ToastStack toasts={toasts} onDismiss={dismissToast} /> : null}
+      <ToastStack toasts={toasts} onDismiss={dismissToast} />
       {isAuthenticated && <ChatAssistant session={session} biasData={biasData} trainData={trainData} />}
     </ErrorBoundary>
   )
