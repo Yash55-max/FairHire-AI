@@ -65,6 +65,7 @@ app.add_middleware(
         ).split(",")
         if o.strip()
     ],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -138,7 +139,20 @@ def _current_user(authorization: str | None = Header(default=None)) -> Authentic
     email = str(payload.get("sub", "")).lower()
     user_record = store.get_user(email)
     if not user_record:
-        raise HTTPException(status_code=401, detail="Unknown user")
+        # Cloud runtimes are stateless. Rehydrate a minimal profile from token subject
+        # so authenticated requests remain valid across instance restarts/scale-outs.
+        now = datetime.utcnow().isoformat()
+        user_record = {
+            "user_id": _generate_user_id(),
+            "employee_id": _generate_employee_id(),
+            "email": email,
+            "name": email.split("@", 1)[0] if email else "user",
+            "role": "analyst",
+            "created_at": now,
+            "password_salt": "",
+            "password_hash": "",
+        }
+        store.put_user(user_record)
     if _ensure_user_identity(user_record):
         store.put_user(user_record)
     return AuthenticatedUser(
@@ -366,6 +380,13 @@ def register_user(payload: AuthRegisterRequest) -> AuthResponse:
     }
     store.put_user(user_record)
     return AuthResponse(token=issue_token(email), user=_serialize_user(_record_to_user(user_record)))
+
+
+@app.get("/auth/exists")
+def check_user_exists(email: str) -> dict[str, bool]:
+    email = email.strip().lower()
+    user_record = store.get_user(email)
+    return {"exists": bool(user_record)}
 
 
 @app.post("/auth/login", response_model=AuthResponse)

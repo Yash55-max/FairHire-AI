@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from typing import Any
 
 import numpy as np
@@ -196,6 +197,12 @@ def _add_logistic_interactions(X: pd.DataFrame, y: pd.Series, max_features: int 
 
 
 def _fit_with_tuning(model: Pipeline, model_type: str, X_train: pd.DataFrame, y_train: pd.Series, random_state: int) -> tuple[Pipeline, dict[str, Any]]:
+    # Cloud Run instances are memory-constrained for parallel CV search.
+    # Fit directly in that environment to avoid worker crashes/503 responses.
+    if os.getenv("K_SERVICE"):
+        model.fit(X_train, y_train)
+        return model, {"cv_skipped": "cloud_run"}
+
     grid = _parameter_grid(model_type)
     if not grid:
         model.fit(X_train, y_train)
@@ -217,7 +224,7 @@ def _fit_with_tuning(model: Pipeline, model_type: str, X_train: pd.DataFrame, y_
         param_grid=grid,
         scoring="f1_weighted",
         cv=cv,
-        n_jobs=-1,
+        n_jobs=1,
         refit=True,
     )
 

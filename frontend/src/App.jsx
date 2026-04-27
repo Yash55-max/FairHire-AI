@@ -252,7 +252,8 @@ const PROTECTED_ROUTES = new Set(['dashboard', 'upload', 'model-analysis', 'bias
 const SESSION_KEY = 'fairhire_session'
 const THEME_KEY = 'fairhire_theme_mode'
 const IS_LOCAL_HOST = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname)
-const API_BASE = (import.meta.env.VITE_API_URL || (IS_LOCAL_HOST ? 'http://127.0.0.1:8000' : '/api')).replace(/\/$/, '')
+const CLOUD_RUN_API_BASE = 'https://fairhire-backend-796656775802.us-central1.run.app'
+const API_BASE = (import.meta.env.VITE_API_URL || (IS_LOCAL_HOST ? CLOUD_RUN_API_BASE : '/api')).replace(/\/$/, '')
 const API_CONFIG_ERROR = 'Backend API is not configured for production. Set VITE_API_URL to your deployed backend URL and redeploy the frontend.'
 const ROUTE_META = {
   dashboard: ['Workspace', 'Dashboard'],
@@ -690,7 +691,7 @@ async function callApi(path, options = {}) {
       headers: requestHeaders,
     })
   } catch (error) {
-    throw new Error(`Cannot reach backend API at ${API_BASE}. ${IS_LOCAL_HOST ? 'Make sure FastAPI is running on port 8000.' : 'Deploy backend and set VITE_API_URL.'}`)
+    throw new Error(`Cannot reach backend API at ${API_BASE}. ${IS_LOCAL_HOST ? 'Make sure Cloud Run is reachable or override VITE_API_URL.' : 'Deploy backend and set VITE_API_URL.'}`)
   }
 
   const contentType = response.headers.get('content-type') || ''
@@ -726,7 +727,7 @@ async function downloadReportPdf({ runId, sensitiveColumn, token }) {
       headers: token ? { Authorization: `Bearer ${token}` } : {},
     })
   } catch {
-    throw new Error(`Cannot reach backend API at ${API_BASE}. ${IS_LOCAL_HOST ? 'Make sure FastAPI is running on port 8000.' : 'Deploy backend and set VITE_API_URL.'}`)
+    throw new Error(`Cannot reach backend API at ${API_BASE}. ${IS_LOCAL_HOST ? 'Make sure Cloud Run is reachable or override VITE_API_URL.' : 'Deploy backend and set VITE_API_URL.'}`)
   }
 
   if (!response.ok) {
@@ -2288,7 +2289,6 @@ function useToasts() {
   return {
     toasts,
     pushToast,
-    clearToasts: () => setToasts([]),
     dismissToast: (id) => setToasts((current) => current.filter((toast) => toast.id !== id)),
   }
 }
@@ -2379,11 +2379,10 @@ export default function App() {
     history: false,
   })
 
-  const { toasts, pushToast, dismissToast, clearToasts } = useToasts()
+  const { toasts, pushToast, dismissToast } = useToasts()
 
   const isAuthenticated = Boolean(session?.token)
   const runId = trainData?.run_id || null
-  const isTrainingActive = loading.train || trainingProgress.active
   const effectiveTheme = themeMode === 'device' ? (systemPrefersDark ? 'dark' : 'light') : themeMode
   const userProfile = useMemo(() => {
     const email = session?.user?.email
@@ -2676,7 +2675,6 @@ export default function App() {
     }
 
     setLoading((prev) => ({ ...prev, train: true }))
-    clearToasts()
     setTrainingProgress({
       active: true,
       percent: 8,
@@ -2696,52 +2694,55 @@ export default function App() {
           target_column: target,
           required_position: requiredPosition.trim(),
           model_type: 'random_forest',
-          async_job: true,
+          async_job: false,
           sensitive_column: sensitiveColumn,
           include_fairness_proof: true,
         }),
       })
 
-      const jobId = submission.job_id
-      if (!jobId) {
-        throw new Error('Training job submission did not return a job ID')
-      }
+      let payload = submission.result
+      if (!payload) {
+        const jobId = submission.job_id
+        if (!jobId) {
+          throw new Error('Training request did not return a result or job ID')
+        }
 
-      let pollStep = 0
-      setTrainingProgress((current) => ({
-        ...current,
-        percent: Math.max(current.percent, 16),
-        label: 'Training job queued',
-        message: 'Waiting for compute slot allocation.',
-      }))
+        let pollStep = 0
+        setTrainingProgress((current) => ({
+          ...current,
+          percent: Math.max(current.percent, 16),
+          label: 'Training job queued',
+          message: 'Waiting for compute slot allocation.',
+        }))
 
-      const payload = await pollJobResult(jobId, session?.token, (jobStatus) => {
-        pollStep += 1
-        setTrainingProgress((current) => {
-          const status = String(jobStatus?.status || '').toLowerCase()
-          const incoming = String(jobStatus?.message || '')
-          const next = { ...current }
+        payload = await pollJobResult(jobId, session?.token, (jobStatus) => {
+          pollStep += 1
+          setTrainingProgress((current) => {
+            const status = String(jobStatus?.status || '').toLowerCase()
+            const incoming = String(jobStatus?.message || '')
+            const next = { ...current }
 
-          if (status === 'queued') {
-            next.percent = Math.min(40, Math.max(current.percent, 16 + pollStep * 4))
-            next.label = 'Training job queued'
-            next.message = incoming || 'Waiting in queue.'
-            next.status = 'running'
-          } else if (status === 'running') {
-            next.percent = Math.min(92, Math.max(current.percent, 44 + pollStep * 5))
-            next.label = 'Model training in progress'
-            next.message = incoming || 'Training model and validating fairness guardrails.'
-            next.status = 'running'
-          } else if (status === 'completed') {
-            next.percent = 100
-            next.label = 'Training completed'
-            next.message = incoming || 'Run is ready for analysis.'
-            next.status = 'completed'
-          }
+            if (status === 'queued') {
+              next.percent = Math.min(40, Math.max(current.percent, 16 + pollStep * 4))
+              next.label = 'Training job queued'
+              next.message = incoming || 'Waiting in queue.'
+              next.status = 'running'
+            } else if (status === 'running') {
+              next.percent = Math.min(92, Math.max(current.percent, 44 + pollStep * 5))
+              next.label = 'Model training in progress'
+              next.message = incoming || 'Training model and validating fairness guardrails.'
+              next.status = 'running'
+            } else if (status === 'completed') {
+              next.percent = 100
+              next.label = 'Training completed'
+              next.message = incoming || 'Run is ready for analysis.'
+              next.status = 'completed'
+            }
 
-          return next
+            return next
+          })
         })
-      })
+      }
 
       setTrainData(payload)
       setBiasError(null)
@@ -2925,7 +2926,7 @@ export default function App() {
       <div className={`route-stage ${routeStageClass}`}>
         {wrappedPage}
       </div>
-      {!isTrainingActive ? <ToastStack toasts={toasts} onDismiss={dismissToast} /> : null}
+      <ToastStack toasts={toasts} onDismiss={dismissToast} />
       {isAuthenticated && <ChatAssistant session={session} biasData={biasData} trainData={trainData} />}
     </ErrorBoundary>
   )

@@ -108,6 +108,7 @@ app.add_middleware(
         ).split(",")
         if o.strip()
     ],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -231,7 +232,20 @@ def _current_user(authorization: str | None = Header(default=None)) -> Authentic
     email = str(payload.get("sub", "")).lower()
     user_record = store.get_user(email)
     if not user_record:
-        raise HTTPException(status_code=401, detail="Unknown user")
+        # Cloud runtimes are stateless. Rehydrate a minimal profile from token subject
+        # so authenticated requests remain valid across instance restarts/scale-outs.
+        now = datetime.utcnow().isoformat()
+        user_record = {
+            "user_id": _generate_user_id(),
+            "employee_id": _generate_employee_id(),
+            "email": email,
+            "name": email.split("@", 1)[0] if email else "user",
+            "role": "analyst",
+            "created_at": now,
+            "password_salt": "",
+            "password_hash": "",
+        }
+        store.put_user(user_record)
     if _ensure_user_identity(user_record):
         store.put_user(user_record)
     return AuthenticatedUser(
@@ -588,9 +602,9 @@ def _explain_job(run_id: str, sample_size: int) -> dict[str, object]:
     return payload.model_dump()
 
 
-def _build_report(run_id: str, sensitive_column: str, sample_size: int) -> ReportResponse:
-    train_run = train_metrics(run_id)
-    bias = bias_metrics(run_id=run_id, sensitive_column=sensitive_column)
+def _build_report(run_id: str, sensitive_column: str, sample_size: int, user: AuthenticatedUser) -> ReportResponse:
+    train_run = train_metrics(run_id, user=user)
+    bias = bias_metrics(run_id=run_id, sensitive_column=sensitive_column, user=user)
     explain_payload = ExplainResponse(**_explain_job(run_id, sample_size))
     return ReportResponse(run_id=run_id, train=train_run, bias=bias, explain=explain_payload)
 
@@ -666,7 +680,7 @@ def get_job_status(job_id: str) -> JobStatusResponse:
 
 @app.get("/report/pdf")
 def download_report_pdf(run_id: str, sensitive_column: str = "gender", sample_size: int = 40, user: AuthenticatedUser = Depends(_current_user)) -> Response:
-    report = _build_report(run_id, sensitive_column, sample_size)
+    report = _build_report(run_id, sensitive_column, sample_size, user)
     try:
         pdf_bytes = build_report_pdf(report.model_dump())
     except RuntimeError as exc:
@@ -819,7 +833,7 @@ def report(run_id: str, sensitive_column: str = "gender", sample_size: int = 40,
     if not ML_AVAILABLE:
         raise HTTPException(status_code=503, detail=ML_UNAVAILABLE_DETAIL)
 
-    return _build_report(run_id, sensitive_column, sample_size)
+    return _build_report(run_id, sensitive_column, sample_size, user)
 
 
 @app.post("/assistant")

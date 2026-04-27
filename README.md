@@ -121,6 +121,11 @@ firebase deploy --only hosting
 - Hosting serves static files from `frontend/dist` (configured in `firebase.json`).
 - Backend must have `ALLOWED_ORIGINS` env var set to include your Firebase domain for CORS to work.
 
+#### Production-safe mode (Cloud Run)
+- Keep frontend training requests synchronous in production (`async_job: false`) to avoid cross-instance `/jobs/{id}` polling issues on stateless Cloud Run.
+- Keep Cloud Run-safe training enabled in `backend/app/ml_pipeline.py` (skip CV tuning when `K_SERVICE` is present).
+- If you switch back to async jobs later, move job storage from in-memory to shared persistence (Firestore/Redis/DB) before enabling it in production.
+
 ---
 
 ## 📊 Product Walkthrough

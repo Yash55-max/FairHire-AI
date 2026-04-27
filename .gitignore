@@ -1,6 +1,9 @@
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 *$py.class
 *.so
 .Python
@@ -28,6 +31,7 @@ ENV/
 .env
 .env.local
 .env.*.local
+.env.production
 
 # Logs
 *.log
