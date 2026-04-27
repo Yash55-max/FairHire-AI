@@ -83,6 +83,46 @@ npm run dev
 
 ---
 
+## ☁️ Production Deployment (Firebase Hosting + Cloud Run)
+
+### Backend Deployment
+Deploy the FastAPI backend to Cloud Run with CORS enabled for your Firebase domain.
+See [DEPLOY_BACKEND.md](DEPLOY_BACKEND.md) for gcloud commands and post-deployment testing.
+
+### Frontend Deployment
+
+#### 1. Configure Frontend API Base URL
+Create `frontend/.env.production`:
+
+```env
+VITE_API_URL=https://fairhire-backend-796656775802.us-central1.run.app
+```
+
+This makes production builds call Cloud Run directly instead of `/api`.
+
+#### 2. Build Frontend
+```bash
+cd frontend
+npm run build
+```
+
+#### 3. Deploy to Firebase Hosting
+```bash
+cd ..
+firebase deploy --only hosting
+```
+
+#### 4. Live URLs
+- Frontend: https://fairhire-67f38.web.app
+- API: https://fairhire-backend-796656775802.us-central1.run.app
+
+#### Notes
+- Hosting project is mapped in `.firebaserc` (`fairhire-67f38`).
+- Hosting serves static files from `frontend/dist` (configured in `firebase.json`).
+- Backend must have `ALLOWED_ORIGINS` env var set to include your Firebase domain for CORS to work.
+
+---
+
 ## 📊 Product Walkthrough
 
 ### 1. Landing & Authentication

@@ -100,7 +100,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[o.strip() for o in os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")],
+    allow_origins=[
+        o.strip()
+        for o in os.getenv(
+            "ALLOWED_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173,https://fairhire-67f38.web.app,https://fairhire-67f38.firebaseapp.com",
+        ).split(",")
+        if o.strip()
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -798,7 +805,7 @@ def bias_metrics(run_id: str, sensitive_column: str = "gender", user: Authentica
 
 
 @app.get("/explain", response_model=JobSubmissionResponse)
-def explain_metrics(run_id: str, sample_size: int = 40, async_job: bool = True, user: AuthenticatedUser = Depends(_current_user)) -> JobSubmissionResponse:
+def explain_metrics(run_id: str, sample_size: int = 40, async_job: bool = False, user: AuthenticatedUser = Depends(_current_user)) -> JobSubmissionResponse:
     if async_job:
         job = jobs.submit("explain", _explain_job, run_id, sample_size)
         return JobSubmissionResponse(job_id=job.job_id, kind=job.kind, status=job.status, message="Explainability queued")

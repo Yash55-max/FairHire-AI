@@ -252,7 +252,7 @@ const PROTECTED_ROUTES = new Set(['dashboard', 'upload', 'model-analysis', 'bias
 const SESSION_KEY = 'fairhire_session'
 const THEME_KEY = 'fairhire_theme_mode'
 const IS_LOCAL_HOST = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname)
-const API_BASE = (import.meta.env.VITE_API_URL || (IS_LOCAL_HOST ? 'http://127.0.0.1:8000' : '')).replace(/\/$/, '')
+const API_BASE = (import.meta.env.VITE_API_URL || (IS_LOCAL_HOST ? 'http://127.0.0.1:8000' : '/api')).replace(/\/$/, '')
 const API_CONFIG_ERROR = 'Backend API is not configured for production. Set VITE_API_URL to your deployed backend URL and redeploy the frontend.'
 const ROUTE_META = {
   dashboard: ['Workspace', 'Dashboard'],
@@ -1380,6 +1380,7 @@ function UploadPage({
   setSelectedTarget,
   requiredPosition,
   setRequiredPosition,
+  trainingProgress,
 }) {
   const inputRef = useRef(null)
   const uploadFields = [
@@ -1479,6 +1480,26 @@ function UploadPage({
           {loading.train ? 'Training model...' : 'Continue to Mapping'}
         </ButtonWithIcon>
       </div>
+
+      {trainingProgress.active || trainingProgress.status === 'failed' ? (
+        <section className="training-progress-shell surface-card" aria-live="polite">
+          <div className="key-row">
+            <strong>{trainingProgress.label || 'Preparing training...'}</strong>
+            <span>{trainingProgress.percent}%</span>
+          </div>
+          <div
+            className={`training-progress-track ${trainingProgress.status === 'failed' ? 'failed' : ''}`}
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={trainingProgress.percent}
+            aria-label="Model training progress"
+          >
+            <span style={{ width: `${trainingProgress.percent}%` }} />
+          </div>
+          {trainingProgress.message ? <p className="micro-copy">{trainingProgress.message}</p> : null}
+        </section>
+      ) : null}
 
       <SymbolFieldStrip items={uploadFields} />
     </>
@@ -2267,11 +2288,20 @@ function useToasts() {
   return {
     toasts,
     pushToast,
+    clearToasts: () => setToasts([]),
     dismissToast: (id) => setToasts((current) => current.filter((toast) => toast.id !== id)),
   }
 }
 
 export default function App() {
+  const initialTrainingProgress = {
+    active: false,
+    percent: 0,
+    label: '',
+    message: '',
+    status: 'idle',
+  }
+
   const [route, setRoute] = useState(readRoute)
   const [session, setSession] = useState(() => {
     try {
@@ -2302,6 +2332,7 @@ export default function App() {
   const [isSidebarCompact, setIsSidebarCompact] = useState(false)
   const [uiBooting, setUiBooting] = useState(true)
   const [routeStageClass, setRouteStageClass] = useState('entered')
+  const [trainingProgress, setTrainingProgress] = useState(initialTrainingProgress)
   const [themeMode, setThemeMode] = useState(() => {
     try {
       const saved = localStorage.getItem(THEME_KEY)
@@ -2348,10 +2379,11 @@ export default function App() {
     history: false,
   })
 
-  const { toasts, pushToast, dismissToast } = useToasts()
+  const { toasts, pushToast, dismissToast, clearToasts } = useToasts()
 
   const isAuthenticated = Boolean(session?.token)
   const runId = trainData?.run_id || null
+  const isTrainingActive = loading.train || trainingProgress.active
   const effectiveTheme = themeMode === 'device' ? (systemPrefersDark ? 'dark' : 'light') : themeMode
   const userProfile = useMemo(() => {
     const email = session?.user?.email
@@ -2458,10 +2490,8 @@ export default function App() {
       if (!runId || route !== 'explainability' || explainData || loading.explain || explainError) return
       setLoading((prev) => ({ ...prev, explain: true }))
       try {
-        const submission = await callApi(`/explain?run_id=${encodeURIComponent(runId)}`, { token: session?.token })
-        const payload = submission.result || await pollJobResult(submission.job_id, session?.token, (status) => {
-          pushToast('info', `Explain ${status.status}`, status.message)
-        })
+        const submission = await callApi(`/explain?run_id=${encodeURIComponent(runId)}&async_job=false`, { token: session?.token })
+        const payload = submission.result
         setExplainData(payload)
         setExplainError(null)
       } catch (error) {
@@ -2625,17 +2655,37 @@ export default function App() {
 
   const handleTrain = async () => {
     if (!uploadData?.dataset_id) {
-      pushToast('error', 'No dataset', 'Upload a dataset before training.')
+      setTrainingProgress({
+        active: false,
+        percent: 0,
+        label: 'Training not started',
+        message: 'Upload a dataset before training.',
+        status: 'failed',
+      })
       return
     }
     if (!requiredPosition.trim()) {
-      pushToast('error', 'Required position missing', 'Enter the target hiring position before training.')
+      setTrainingProgress({
+        active: false,
+        percent: 0,
+        label: 'Training not started',
+        message: 'Enter the target hiring position before training.',
+        status: 'failed',
+      })
       return
     }
 
     setLoading((prev) => ({ ...prev, train: true }))
+    clearToasts()
+    setTrainingProgress({
+      active: true,
+      percent: 8,
+      label: 'Submitting training job',
+      message: 'Initializing dataset and training pipeline.',
+      status: 'running',
+    })
+
     try {
-      let payload
       const target = selectedTarget || uploadData.target_suggestions?.[0] || uploadData.columns?.[0]
       const submission = await callApi('/train', {
         method: 'POST',
@@ -2646,12 +2696,51 @@ export default function App() {
           target_column: target,
           required_position: requiredPosition.trim(),
           model_type: 'random_forest',
+          async_job: true,
           sensitive_column: sensitiveColumn,
           include_fairness_proof: true,
         }),
       })
-      payload = submission.result || await pollJobResult(submission.job_id, session?.token, (status) => {
-        pushToast('info', `Training ${status.status}`, status.message)
+
+      const jobId = submission.job_id
+      if (!jobId) {
+        throw new Error('Training job submission did not return a job ID')
+      }
+
+      let pollStep = 0
+      setTrainingProgress((current) => ({
+        ...current,
+        percent: Math.max(current.percent, 16),
+        label: 'Training job queued',
+        message: 'Waiting for compute slot allocation.',
+      }))
+
+      const payload = await pollJobResult(jobId, session?.token, (jobStatus) => {
+        pollStep += 1
+        setTrainingProgress((current) => {
+          const status = String(jobStatus?.status || '').toLowerCase()
+          const incoming = String(jobStatus?.message || '')
+          const next = { ...current }
+
+          if (status === 'queued') {
+            next.percent = Math.min(40, Math.max(current.percent, 16 + pollStep * 4))
+            next.label = 'Training job queued'
+            next.message = incoming || 'Waiting in queue.'
+            next.status = 'running'
+          } else if (status === 'running') {
+            next.percent = Math.min(92, Math.max(current.percent, 44 + pollStep * 5))
+            next.label = 'Model training in progress'
+            next.message = incoming || 'Training model and validating fairness guardrails.'
+            next.status = 'running'
+          } else if (status === 'completed') {
+            next.percent = 100
+            next.label = 'Training completed'
+            next.message = incoming || 'Run is ready for analysis.'
+            next.status = 'completed'
+          }
+
+          return next
+        })
       })
 
       setTrainData(payload)
@@ -2659,13 +2748,30 @@ export default function App() {
       setExplainError(null)
       setReportError(null)
       saveTrainingRun({ user: session?.user, training: payload }).catch(() => {
-        pushToast('info', 'Firestore sync', 'Training completed, but run sync to Firestore failed.')
+        console.warn('Training completed, but run sync to Firestore failed.')
       })
-      pushToast('success', 'Model trained', `Run ${payload.run_id} is ready for bias analysis.`, `Insight: Move to Fairness Audit to compare group selection rates.`)
+      setTrainingProgress({
+        active: true,
+        percent: 100,
+        label: 'Training completed',
+        message: `Run ${payload.run_id} is ready for bias analysis.`,
+        status: 'completed',
+      })
+
+      window.setTimeout(() => {
+        setTrainingProgress(initialTrainingProgress)
+      }, 1800)
+
       navigate('model-analysis')
       setRoute('model-analysis')
     } catch (error) {
-      pushToast('error', 'Training failed', error.message)
+      setTrainingProgress({
+        active: false,
+        percent: 0,
+        label: 'Training failed',
+        message: error.message || 'Unable to train model.',
+        status: 'failed',
+      })
     } finally {
       setLoading((prev) => ({ ...prev, train: false }))
     }
@@ -2720,6 +2826,7 @@ export default function App() {
               setSelectedTarget={setSelectedTarget}
               requiredPosition={requiredPosition}
               setRequiredPosition={setRequiredPosition}
+              trainingProgress={trainingProgress}
             />
           </AppShell>
         )
@@ -2818,7 +2925,7 @@ export default function App() {
       <div className={`route-stage ${routeStageClass}`}>
         {wrappedPage}
       </div>
-      <ToastStack toasts={toasts} onDismiss={dismissToast} />
+      {!isTrainingActive ? <ToastStack toasts={toasts} onDismiss={dismissToast} /> : null}
       {isAuthenticated && <ChatAssistant session={session} biasData={biasData} trainData={trainData} />}
     </ErrorBoundary>
   )

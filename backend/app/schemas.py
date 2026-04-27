@@ -35,7 +35,7 @@ class TrainRequest(BaseModel):
     ] = "random_forest"
     test_size: float = Field(default=0.2, ge=0.1, le=0.4)
     random_state: int = 42
-    async_job: bool = True
+    async_job: bool = False
     sensitive_column: str | None = "gender"
     include_fairness_proof: bool = True
     user_email: str = "anonymous"
