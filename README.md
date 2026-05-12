@@ -130,19 +130,19 @@ firebase deploy --only hosting
 
 ## 📊 Product Walkthrough
 
-### 1. Landing & Authentication
+### 1. Landing & Authentication -
 Premium entry point with aurora gradients and secure access controls.
 ![Landing](screenshots/8_landing_1776685849657.png)
 
-### 2. Guided Ingest & Training
+### 2. Guided Ingest & Training -
 Automatic target detection and protected class flagging during data upload.
 ![Upload](screenshots/2_upload_1776685934495.png)
 
-### 3. Deep Fairness Audit
+### 3. Deep Fairness Audit -
 Demographic parity tracking and interactive what-if simulations.
 ![Audit](screenshots/4_fairness_audit_1776685970889.png)
 
-### 4. Conversational Auditor
+### 4. Conversational Auditor -
 Ask Gemini about specific bias gaps or candidate justifications in real-time.
 ![Chat](screenshots/5_decision_insights_1776685987986.png)
 
